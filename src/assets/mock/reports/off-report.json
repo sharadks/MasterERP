@@ -1,0 +1,336 @@
+{
+  "categoryid": 1,
+  "categoryname": "Off Price",
+  "reports": [
+    {
+      "reportid": 1,
+      "reportname": "Off Price Report1",
+      "reportstarttime": "08:00 AM",
+      "reportendtime": "08:10 AM",
+      "reportstatus": "Pending",
+      "sla_achieved": 0,
+      "createddate": "2017-09-28T16:14:15Z",
+      "source":"mySql",
+      "jobs": [
+        {
+          "jobid": 1,
+          "jobname": "Off Price Job 1",
+          "jobstarttime": "08:00 AM",
+          "jobendtime": "08:01 AM",
+          "jobstatus": "Waiting",
+          "createddate": "2017-09-28T16:14:15Z"
+        },
+        {
+          "jobid": 2,
+          "jobname": "Off Price Job 2",
+          "jobstarttime": "08:01 AM",
+          "jobendtime": "08:02 AM",
+          "jobstatus": "Completed",
+          "createddate": "2017-09-28T16:14:15Z"
+        },
+        {
+          "jobid": 3,
+          "jobname": "Off Price Job 3",
+          "jobstarttime": "08:03 AM",
+          "jobendtime": "08:04 AM",
+          "jobstatus": "Pending",
+          "createddate": "2017-09-28T16:14:15Z"
+        },
+        {
+          "jobid": 4,
+          "jobname": "Off Price Job 4",
+          "jobstarttime": "08:04 AM",
+          "jobendtime": "08:05 AM",
+          "jobstatus": "Pending",
+          "createddate": "2017-09-28T16:14:15Z"
+        },
+        {
+          "jobid": 5,
+          "jobname": "Off Price Job 5",
+          "jobstarttime": "08:06 AM",
+          "jobendtime": "08:07 AM",
+          "jobstatus": "Pending",
+          "createddate": "2017-09-28T16:14:15Z"
+        },
+        {
+          "jobid": 2,
+          "jobname": "Off Price Job 2",
+          "jobstarttime": "08:06 AM",
+          "jobendtime": "08:07 AM",
+          "jobstatus": "Pending",
+          "createddate": "2017-09-28T16:14:15Z"
+        }
+      ]
+    },
+    {
+      "reportid": 2,
+      "reportname": "Off Price Report2",
+      "reportstarttime": "07:00 AM",
+      "reportendtime": "07:10 AM",
+      "reportstatus": "Failed",
+      "sla_achieved": 1,
+      "createddate": "2017-09-28T16:14:15Z",
+      "source":"mySql",
+      "jobs": [
+        {
+          "jobid": 1,
+          "jobname": "Off Price Job 1",
+          "jobstarttime": "07:00 AM",
+          "jobendtime": "07:01 AM",
+          "jobstatus": "Completed",
+          "createddate": "2017-09-28T16:14:15Z"
+        },
+        {
+          "jobid": 2,
+          "jobname": "Off Price Job 2",
+          "jobstarttime": "07:01 AM",
+          "jobendtime": "07:02 AM",
+          "jobstatus": "Failed",
+          "createddate": "2017-09-28T16:14:15Z"
+        },
+        {
+          "jobid": 3,
+          "jobname": "Off Price Job 3",
+          "jobstarttime": "07:03 AM",
+          "jobendtime": "07:04 AM",
+          "jobstatus": "Pending",
+          "createddate": "2017-09-28T16:14:15Z"
+        },
+        {
+          "jobid": 4,
+          "jobname": "Off Price Job 4",
+          "jobstarttime": "07:04 AM",
+          "jobendtime": "07:05 AM",
+          "jobstatus": "Pending",
+          "createddate": "2017-09-28T16:14:15Z"
+        },
+        {
+          "jobid": 5,
+          "jobname": "Off Price Job 5",
+          "jobstarttime": "07:06 AM",
+          "jobendtime": "07:07 AM",
+          "jobstatus": "Pending",
+          "createddate": "2017-09-28T16:14:15Z"
+        }
+      ]
+    },
+    {
+      "reportid": 3,
+      "reportname": "Off Price Report3",
+      "reportstarttime": "08:00 AM",
+      "reportendtime": "08:10 AM",
+      "reportstatus": "Completed",
+      "sla_achieved": 1,
+      "createddate": "2017-09-28T16:14:15Z",
+      "source":"MsDb",
+      "jobs": [
+        {
+          "jobid": 1,
+          "jobname": "Off Price Job 1",
+          "jobstarttime": "08:00 AM",
+          "jobendtime": "08:01 AM",
+          "jobstatus": "Completed",
+          "createddate": "2017-09-28T16:14:15Z"
+        },
+        {
+          "jobid": 2,
+          "jobname": "Off Price Job 2",
+          "jobstarttime": "08:01 AM",
+          "jobendtime": "08:02 AM",
+          "jobstatus": "Completed",
+          "createddate": "2017-09-28T16:14:15Z"
+        },
+        {
+          "jobid": 3,
+          "jobname": "Off Price Job 3",
+          "jobstarttime": "08:03 AM",
+          "jobendtime": "08:04 AM",
+          "jobstatus": "Completed",
+          "createddate": "2017-09-28T16:14:15Z"
+        },
+        {
+          "jobid": 4,
+          "jobname": "Off Price Job 4",
+          "jobstarttime": "08:04 AM",
+          "jobendtime": "08:05 AM",
+          "jobstatus": "Completed",
+          "createddate": "2017-09-28T16:14:15Z"
+        },
+        {
+          "jobid": 5,
+          "jobname": "Off Price Job 5",
+          "jobstarttime": "08:06 AM",
+          "jobendtime": "08:07 AM",
+          "jobstatus": "Completed",
+          "createddate": "2017-09-28T16:14:15Z"
+        },
+        {
+          "jobid": 6,
+          "jobname": "Off Price Job 6",
+          "jobstarttime": "08:06 AM",
+          "jobendtime": "08:07 AM",
+          "jobstatus": "Completed",
+          "createddate": "2017-09-28T16:14:15Z"
+        }
+
+
+      ]
+    },
+    {
+      "reportid": 4,
+      "reportname": "Off Price Report4",
+      "reportstarttime": "06:00 AM",
+      "reportendtime": "06:10 AM",
+      "reportstatus": "Completed",
+      "sla_achieved": 0,
+      "createddate": "2017-09-28T16:14:15Z",
+      "source":"MonDb",
+      "jobs": [
+        {
+          "jobid": 1,
+          "jobname": "Off Price Job 1",
+          "jobstarttime": "06:00 AM",
+          "jobendtime": "06:01 AM",
+          "jobstatus": "Completed",
+          "createddate": "2017-09-28T16:14:15Z"
+        },
+        {
+          "jobid": 2,
+          "jobname": "Off Price Job 2",
+          "jobstarttime": "06:01 AM",
+          "jobendtime": "06:02 AM",
+          "jobstatus": "Completed",
+          "createddate": "2017-09-28T16:14:15Z"
+        },
+        {
+          "jobid": 3,
+          "jobname": "Off Price Job 3",
+          "jobstarttime": "06:03 AM",
+          "jobendtime": "06:04 AM",
+          "jobstatus": "Completed",
+          "createddate": "2017-09-28T16:14:15Z"
+        },
+        {
+          "jobid": 4,
+          "jobname": "Off Price Job 4",
+          "jobstarttime": "06:04 AM",
+          "jobendtime": "06:05 AM",
+          "jobstatus": "Completed",
+          "createddate": "2017-09-28T16:14:15Z"
+        },
+        {
+          "jobid": 5,
+          "jobname": "Off Price Job 5",
+          "jobstarttime": "06:06 AM",
+          "jobendtime": "06:07 AM",
+          "jobstatus": "Completed",
+          "createddate": "2017-09-28T16:14:15Z"
+        }
+      ]
+    },
+    {
+      "reportid": 5,
+      "reportname": "Off Price Report5",
+      "reportstarttime": "06:30 AM",
+      "reportendtime": "06:40 AM",
+      "reportstatus": "Failed",
+      "sla_achieved": 1,
+      "createddate": "2017-09-28T16:14:15Z",
+      "source":"mySql",
+      "jobs": [
+        {
+          "jobid": 1,
+          "jobname": "Off Price Job 1",
+          "jobstarttime": "06:30 AM",
+          "jobendtime": "06:31 AM",
+          "jobstatus": "Failed",
+          "createddate": "2017-09-28T16:14:15Z"
+        },
+        {
+          "jobid": 2,
+          "jobname": "Off Price Job 2",
+          "jobstarttime": "06:31 AM",
+          "jobendtime": "06:32 AM",
+          "jobstatus": "Pending",
+          "createddate": "2017-09-28T16:14:15Z"
+        },
+        {
+          "jobid": 3,
+          "jobname": "Off Price Job 3",
+          "jobstarttime": "06:33 AM",
+          "jobendtime": "06:34 AM",
+          "jobstatus": "Pending",
+          "createddate": "2017-09-28T16:14:15Z"
+        },
+        {
+          "jobid": 4,
+          "jobname": "Off Price Job 4",
+          "jobstarttime": "06:35 AM",
+          "jobendtime": "06:36 AM",
+          "jobstatus": "Pending",
+          "createddate": "2017-09-28T16:14:15Z"
+        },
+        {
+          "jobid": 5,
+          "jobname": "Off Price Job 5",
+          "jobstarttime": "06:37 AM",
+          "jobendtime": "06:38 AM",
+          "jobstatus": "Pending",
+          "createddate": "2017-09-28T16:14:15Z"
+        }
+      ]
+    },
+    {
+      "reportid": 6,
+      "reportname": "Off Price Report5",
+      "reportstarttime": "06:30 AM",
+      "reportendtime": "06:40 AM",
+      "reportstatus": "Waiting",
+      "sla_achieved": 1,
+      "createddate": "2017-09-28T16:14:15Z",
+      "source":"MySql",
+      "jobs": [
+        {
+          "jobid": 1,
+          "jobname": "Off Price Job 1",
+          "jobstarttime": "06:30 AM",
+          "jobendtime": "06:31 AM",
+          "jobstatus": "Completed",
+          "createddate": "2017-09-28T16:14:15Z"
+        },
+        {
+          "jobid": 2,
+          "jobname": "Off Price Job 2",
+          "jobstarttime": "06:31 AM",
+          "jobendtime": "06:32 AM",
+          "jobstatus": "Completed",
+          "createddate": "2017-09-28T16:14:15Z"
+        },
+        {
+          "jobid": 3,
+          "jobname": "Off Price Job 3",
+          "jobstarttime": "06:33 AM",
+          "jobendtime": "06:34 AM",
+          "jobstatus": "Completed",
+          "createddate": "2017-09-28T16:14:15Z"
+        },
+        {
+          "jobid": 4,
+          "jobname": "Off Price Job 4",
+          "jobstarttime": "06:35 AM",
+          "jobendtime": "06:36 AM",
+          "jobstatus": "Completed",
+          "createddate": "2017-09-28T16:14:15Z"
+        },
+        {
+          "jobid": 5,
+          "jobname": "Off Price Job 5",
+          "jobstarttime": "06:37 AM",
+          "jobendtime": "06:38 AM",
+          "jobstatus": "Pending",
+          "createddate": "2017-09-28T16:14:15Z"
+        }
+      ]
+    }
+  ]
+}

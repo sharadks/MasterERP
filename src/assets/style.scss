@@ -1,0 +1,91 @@
+/*
+ *
+ *   Perspective - Responsive Admin Theme
+ *   version 0.0.1
+ *
+*/
+// Google Fonts
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
+
+// Variables, Mixins
+@import "imports/variables";
+@import "imports/mixins";
+
+// Perspective Theme Elements
+@import "imports/typography";
+@import "imports/navigation";
+@import "imports/top_navigation";
+@import "imports/buttons";
+@import "imports/badges_labels";
+@import "imports/elements";
+@import "imports/sidebar";
+@import "imports/base";
+@import "imports/pages";
+@import "imports/chat";
+@import "imports/metismenu";
+@import "imports/spinners";
+@import "imports/tabs";
+
+// Landing page styles
+@import "imports/landing";
+
+// RTL Support
+@import "imports/rtl";
+
+// For demo only - config box style
+@import "imports/theme-config";
+
+// Perspective Skins
+@import "imports/skins";
+@import "imports/md-skin";
+
+// Media query style
+@import "imports/media";
+
+// Custom style
+// Your custom style to override base style
+@import "imports/custom";
+
+// Clear layout on print mode
+@media print {
+  nav.navbar-static-side {
+    display: none;
+  }
+  body { overflow: visible !important; }
+
+  #page-wrapper {
+    margin: 0;
+  }
+}
+/************** Custome CSS Define by sanjay ****************/
+
+header {
+  background: #fff;
+  float: left;
+  width: 100%;
+  margin-bottom: 20px;
+  box-shadow: 0 0px 24px 0 rgba(0, 0, 0, 0.06), 0 1px 0px 0 rgba(0, 0, 0, 0.02);
+}
+main{margin-bottom:60px;}
+.main-nav{border:0px;}
+.main-nav.nav-tabs > li > a{border-radius:0px;}
+.main-nav.nav-tabs > li.active > a{ border:0px; background:#1bb394; color:#fff;}
+.form-control,.btn{font-size:1.4rem;}
+.btn-sm{font-size:11px}
+.custome-table.table{background:#fff;}
+.custome-table.table > tbody > tr > td, .custome-table.table > tfoot > tr > td{vertical-align:middle; text-align:center;}
+.custome-table .space-1{margin:0px; padding:0px;}
+.custome-table .rcorners1-1{margin:0px;}
+.custome-table .jobRow{margin:0px;}
+table.custome-table > thead > tr > th{background:#fff;}
+.padnone{padding:0px;}
+
+.custome-table .rcorners1-1{width:100%; border-radius:0px;min-height:40px; font-size:11px;}
+.custome-table .float-e-margins{padding-right:8px; padding-bottom:7px;}
+.custome-table .bdiv-1{font-size:13px;}
+.custome-table .popover.bs-popover-right .arrow{left:-12px}
+.footer{z-index:1000}
+.btn-create{text-decoration:underline; color:#1ab394}
+
+.loginscreen .input-group-addon{width:36px; background:#eee}
+.header-login{padding:15px 0px;}

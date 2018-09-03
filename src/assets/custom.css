@@ -1,0 +1,40 @@
+/************** Custome CSS Define by sanjay ****************/
+body{background:#F3F3F4; font-size: 15px; margin:0px}
+
+header {
+	background: #fff;
+	float: left;
+	width: 100%;
+	margin-bottom: 20px;
+	box-shadow: 0 0px 24px 0 rgba(0, 0, 0, 0.06), 0 1px 0px 0 rgba(0, 0, 0, 0.02);
+}
+footer {
+    background:#fff;
+    border-top: 1px solid #e7eaec;
+    bottom: 0;
+    left: 0;
+    padding: 10px 20px;
+    position: absolute;
+    right: 0;
+	z-index:100;
+}
+footer p{margin-bottom: 5px;}
+.home-page{float:left; width:100%;}
+.navbar-toggleable-md .navbar-collapse.login-menu{float: right; width: auto}
+.card.custome-panel{border-color:#1ab394}
+.card.custome-panel > .card-header{background: #1ab394;}
+.card.custome-panel h5{color:#fff;}
+a,.btn-link{color:#1ab394}
+
+.btn{cursor:pointer;}
+.btn-primary{background:#1ab394;border-color:#19a588;}
+.btn-primary.disabled, .btn-primary:disabled{background:#1ab394; opacity:0.5;border-color:#19a588;}
+.btn-primary.active,.btn-primary:hover, .btn-primary:active, .show>.btn-primary.dropdown-toggle{background:#0d9277; border-color:#0b866c}
+.btn-secondary{background:#f3efef}
+.login-menu li{margin-left:15px}
+.middle-box{padding:0 30px;}
+
+.nav-link.active{background:#1ab394; color:#fff;}
+.navbar-toggleable-md .navbar-nav .nav-link{padding:0.5rem 0.8rem}
+
+header .navbar{padding:10px 0px}

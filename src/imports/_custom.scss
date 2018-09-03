@@ -1,0 +1,73 @@
+
+.reports-wrapper {
+  /*background-color: pink;*/
+  background-color: $gray;
+}
+
+.report-row {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.job-column {
+  /*background-color: blue;*/
+  background-color: $gray;
+}
+
+.reportdata-column {
+  /*background-color: yellow;*/
+  background-color: $gray;
+}
+
+.reportseparator-row {
+  margin-bottom: 20px;
+  height: 4px;
+  background-color: #999999;
+}
+
+.jobdata-row {
+  margin-top: 10px;
+}
+
+.job-tile {
+  margin: -10px;
+}
+
+.job-indicator {
+  width: 32px;
+}
+
+.jobdata-detail-show {
+  display: block;
+}
+
+.jobdata-detail-hide {
+  display: none;
+}
+
+.reportname-column {
+  padding-top:5px;
+  background-color: $gray;
+  border: 0;
+  border-left-color: #999999;
+  border-style: solid;
+  border-left-width: 2px;
+}
+
+.reportid-column {
+  padding-top:5px;
+  background-color: $gray;
+  border: 0;
+  border-left-color: #999999;
+  border-style: solid;
+  border-left-width: 2px;
+}
+
+.reportsla-column {
+  padding-top:5px;
+  background-color: $gray;
+  border: 0;
+  border-left-color: #999999;
+  border-style: solid;
+  border-left-width: 2px;
+}

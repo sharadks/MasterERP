@@ -1,0 +1,62 @@
+<div class="clearfix"></div>
+<div class="container">
+<div class="row">
+<div class="col-sm-6 offset-md-3">
+<div class="middle-box text-center loginscreen animated fadeInDown">
+  <div class="card custome-panel">
+    <div class="card-header">
+      <h5 class="white-text">Brij ERP Login</h5></div>
+    <div class="card-block">
+      <list-errors [errors]="errors"></list-errors>
+      <form class="m-t" role="form" [formGroup]="authForm" (ngSubmit)="submitForm()">
+        <fieldset [disabled]="isSubmitting">
+          <div class="form-group">
+            <div class="input-group">
+             <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+              <input
+                formControlName="email"
+                placeholder="Email"
+                class="form-control"
+                type="text"/>
+            </div>
+          </div>
+          <div class="form-group">
+
+            <div class="input-group">
+             <span class="input-group-addon"><i class="fa fa-key" aria-hidden="true"></i></span>
+              <input
+                formControlName="password"
+                placeholder="Password"
+                class="form-control"
+                type="password"/>
+            </div>
+
+          </div>
+		  <div class="form-group">
+          <div class="row">
+            <div class="col-md-6 text-left">
+              <button class="btn btn-primary" [disabled]="!authForm.valid" type="submit">
+                {{ title }}
+              </button>
+            </div>
+            <div class="col-md-6">
+              <!-- <a href="#" class="pull-right">Forgot password?</a> -->
+              </div>
+          </div>
+		  </div>
+          <div class="row">
+            <div class="col-md-12">
+              <hr>
+              <!-- <p>Do not have an account? <a class="btn-sm btn-link btn-create" href="#">Create an account</a></p> -->
+            </div>
+          </div>
+
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+	</div>
+</div>
+

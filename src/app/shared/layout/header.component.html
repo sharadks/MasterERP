@@ -1,0 +1,128 @@
+<header>
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<nav class="navbar navbar-toggleable-md">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>  
+      
+    <a class="navbar-brand mr-auto" routerLink="/"><img src=""></a>    
+   <div class="collapse navbar-collapse navbar-right login-menu my-2 my-lg-0" id="navbarSupportedContent">
+    <!-- Show this for logged out users -->
+    <ul *showAuthed="false"
+      class="navbar-nav ">
+
+       <li class="nav-item active">
+        <a class=""
+          routerLink="/">
+          Home
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="btn-sm btn-primary"
+          routerLink="/login"
+          routerLinkActive="active">
+          Sign in
+        </a>
+      </li>
+    </ul>
+	
+    <!-- Show this for logged in users -->
+    <ul *showAuthed="true"
+      class="nav navbar-nav pull-xs-right">
+
+      <li class="nav-item">
+        <a class="nav-link"
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }">
+          Home
+        </a>
+      </li>
+        <!--<li class="nav-item" *ngFor="let route of currentUser.dashboards">
+            <a class="nav-link"
+               routerLink="/"
+               routerLinkActive="active"
+               [routerLinkActiveOptions]="{ exact: true }">
+                {{route}}
+            </a>
+        </li>-->
+
+      <li class="nav-item">
+        <a class="nav-link"
+           routerLink="/certified-report"
+           routerLinkActive="active">
+          &nbsp; Certified Report
+        </a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link"
+           routerLink="/selfservice-report"
+           routerLinkActive="active">
+          &nbsp; Self-Service Report
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"
+           routerLink="/full-report"
+           routerLinkActive="active">
+          &nbsp;
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"
+           routerLink="/report-availability"
+           routerLinkActive="active">
+          &nbsp;Report Availability
+        </a>
+      </li>
+        <li class="nav-item">
+            <a class="nav-link"
+               routerLink="/data-quality"
+               routerLinkActive="active">
+                &nbsp;Data Quality
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link"
+               routerLink="/data-dictionary"
+               routerLinkActive="active">
+                &nbsp;Data Dictionary
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link"
+               routerLink="/training"
+               routerLinkActive="active">
+                &nbsp;Training
+            </a>
+        </li> -->
+
+
+      <li class="nav-item">
+      <a class="nav-link btn-secondary btn"
+         routerLink="/logout"
+        routerLinkActive="active">
+        &nbsp;Logout
+      </a>
+    </li>
+
+      <!--<li class="nav-item">
+        <a class="nav-link"
+          [routerLink]="['/profile', currentUser.username]"
+          routerLinkActive="active">
+          <img [src]="currentUser.image" *ngIf="currentUser.image" class="user-pic" />
+          {{ currentUser.username }}
+        </a>
+      </li>-->
+
+    </ul>
+</div>
+</nav>
+</div>
+</div>
+</div>
+</header>
+<div class="clearfix">&nbsp;</div>

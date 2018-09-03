@@ -1,0 +1,145 @@
+<div> i am rendering data  --    {{routeUrl}}</div>
+<div class="container">
+    <div class="row">
+        <p *ngFor="let al of alerts">
+             <ngb-alert type="danger" [dismissible]="false">
+               <strong>Alert!</strong> {{ al.outagemessage }}: {{al.system}}
+               from: {{al.outagestarttime}} to: {{al.outageendtime}} on: {{al.outagedate}}
+               slackchannel: {{al.slackchannel}}. Posted by: {{al.contactperson}} on: {{al.createddate}}
+             </ngb-alert>
+        </p>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="pull-right">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input #box class="form-control" placeholder="yyyy-mm-dd"
+                                   name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker"
+                                   (ngModelChange)="update($event)">
+                            <button class="input-group-addon" (click)="d.toggle()" type="button">
+                                <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <hr/>
+                <p style="margin-top: 5px">{{box.value}}</p>
+            </div>
+        </div>
+    </div>
+   <!-- <div class="row">
+        <table class="table table-striped" [mfData]="reports" #mf="mfDataTable"
+               [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
+            <thead class="tableHeaderRow ">
+            <tr>
+                <th class="tableHeader1">
+                    <mfDefaultSorter by="jobs">JobName</mfDefaultSorter>
+                </th>
+                <th class="tableHeader2">
+                    <mfDefaultSorter by="reportname">ReportName</mfDefaultSorter>
+                </th>
+                <th class="tableHeader3">
+                    <mfDefaultSorter by="source">Source</mfDefaultSorter>
+                </th>
+                <th class="tableHeader4">
+                    <mfDefaultSorter by="sla"> SLA</mfDefaultSorter>
+                </th>
+                <th class="tableHeader5">
+                    <mfDefaultSorter by="reportendtime">Actual</mfDefaultSorter>
+                </th>
+                <th class="tableHeader6">
+                    <mfDefaultSorter [by]="reportendtime">ETA(!)</mfDefaultSorter>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of data">
+                <td style="padding-bottom: 1px">
+                    <div class="col-md-12">
+                        <div class="col-md-4 padnone" *ngFor="let job of item.jobs">
+                            <div class=" "><div class="ibox-title rcorners1-1 ">
+                        <span [ngClass]="{
+                           'success': job.jobstatus === 'Completed' ? true : false,
+                           'danger': job.jobstatus ==='Failed' ? true : false,
+                           'pull-right': true,
+                           'job-indicator': true
+                           }" title="{}"><i [ngClass]="{
+                           'fa': true,
+                           'fa-check greeniconcolor': job.jobstatus === 'Completed' ? true : false,
+                           'fa-exclamation rediconcolor': job.jobstatus === 'Failed' ? true : false,
+                           'fa-hourglass-start yellowiconcolor': job.jobstatus === 'Pending' ? true : false
+                           }"></i></span>
+                                <span class="bdiv-1"
+                                      [ngbPopover]="popContent" popoverTitle="{{job.jobname }}"
+                                      [placement]="getPlacement()" :hover>
+                        {{job.jobname}}
+                        </span>
+                                <ng-template #popContent>
+                                    <strong class="popOverDisplay">Start:{{job.jobstarttime}}
+                                        End:{{job.jobendtime}}</strong>
+                                </ng-template>
+
+                                <h5 (click)="onShow($event,job.jobid,report.reportid)" class="panel"
+                                    :hover>{{job.jobname }}</h5>
+                            </div>
+
+                                <div class="jobdata-detail rdiv"
+                                     *ngIf="edited == true && jobid == job.jobid && reportid == report.reportid"
+                                     (click)="onHide()">
+                                    <div class="no-margins"><label>ID:</label> {{job.jobid}}</div>
+                                    <div><label>Started:</label> {{job.jobstarttime}}</div>
+                                    <div><label>Ended:</label> {{job.jobendtime}}</div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td [ngClass]="{'background-color isuccess': item.reportstatus === 'Completed' ? true: false,
+   'background-color idanger': item.reportstatus === 'Failed' ? true: false,
+   'background-color ': item.reportstatus === 'Pending' ? true: false }"><span class="cen3"><strong>{{ item.reportname }}</strong></span></td>
+                <td>{{item.source | uppercase}}</td>
+                <td [ngClass]="{'background-color isuccess': item.sla_achieved === 1 ? true: false,
+   'background-color idanger': item.sla_achieved  === 0 ? true: false}">{{item.sla}}</td>
+                <td>{{item.reportendtime}}</td>
+                <td></td>
+            </tr>
+            </tbody>
+            <tfoot>
+
+            </tfoot>
+        </table>
+    </div>
+    <div class="row">
+        <h1 class="slaheader">SLA Compliance</h1>
+        <div class="col-md-12" *ngFor="let sla of slaData">
+            <table class="table ">
+                <thead Style="background-color:#EEEEEE;">
+                <tr>
+                    <th>SLA Met</th>
+                    <th>Miss Type</th>
+                    <th>Type</th>
+                    <th>Upstream</th>
+                    <th>Details</th>
+                    <th>User</th>
+                    <th>Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><strong>{{sla.slamet}}</strong></td>
+                    <td><strong>{{sla.misstype}}</strong></td>
+                    <td><strong>{{sla.type}}</strong></td>
+                    <td><strong>{{sla.upstreamsystem}}</strong></td>
+                    <td><strong>{{sla.details}}</strong></td>
+                    <td><strong>{{sla.createdby}}</strong></td>
+                    <td><strong> {{sla.createddate}}</strong></td>
+                </tr>
+                </tbody>
+            </table>
+            <br>
+        </div>
+    </div>-->
+</div>

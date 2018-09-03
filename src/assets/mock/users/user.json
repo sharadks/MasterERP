@@ -1,0 +1,14 @@
+{
+  "user": {
+    "id": 8586,
+    "email": "sharadeduworld@gmail.com",
+    "createdAt": "2017-07-12T10:44:38.970Z",
+    "updatedAt": "2017-07-12T10:44:38.978Z",
+    "username": "Sharad Kumar Saraswat",
+    "bio": null,
+    "image": null,
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ODU4NiwidXNlcm5hbWUiOiJTaGFyYWQgS3VtYXIgU2FyYXN3YXQiLCJleHAiOjE1MTQzNzQ1ODl9.AAqLir-zmR8stHcmwTgSUfGDoFj8iyX1LnRUdFAc5rA",
+    "landingPage":"",
+    "dashboards": ["OffPrice", "Sales", "FullPrice"]
+  }
+}
