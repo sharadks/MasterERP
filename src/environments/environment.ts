@@ -5,8 +5,9 @@
 
 export const environment = {
     production: false,
-    api_url: 'http://localhost:8000/assets/mock',
+    api_url: 'http://myerp.brij.in',
+    get_Otp_path: '/api/Account/GetCredentials',
     off_report_path: '/reports/off-report.json',
-    login_path: '/users/login.json',
+    login_path: '/Auth/token',
     login_auth_path: '/users/user.json'
 };

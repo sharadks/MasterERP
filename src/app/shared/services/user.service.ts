@@ -62,10 +62,20 @@ export class UserService {
   }
 
   attemptAuth(type, credentials): Observable<User> {
-    return this.apiService.get(environment.login_path)
+    console.log("=============", credentials);
+    return this.apiService.post(environment.login_path, credentials)
     .map(
       data => {
-        this.setAuth(data.user);
+        //this.setAuth(data.user);
+        return data;
+      }
+    );
+  }
+
+  getOTP(credentials): Observable<User> {
+    return this.apiService.post(environment.get_Otp_path, credentials)
+    .map(
+      data => {
         return data;
       }
     );

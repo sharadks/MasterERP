@@ -14,6 +14,7 @@ export class AuthComponent implements OnInit {
   errors: Errors = new Errors();
   isSubmitting = false;
   authForm: FormGroup;
+  showOtp: Boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,7 +25,8 @@ export class AuthComponent implements OnInit {
     // use FormBuilder to create a form group
     this.authForm = this.fb.group({
       'email': ['', Validators.required],
-      'password': ['', Validators.required]
+      'password': ['', Validators.required],
+      'otp':['', Validators.required]
     });
   }
 
@@ -41,12 +43,26 @@ export class AuthComponent implements OnInit {
     });
   }
 
+
+  getOTP() {
+    this.errors = new Errors();
+    const credentials = this.authForm.value;
+    this.userService.getOTP({'login_id': credentials.email,'password':credentials.password}).subscribe(
+      data => {
+        this.showOtp = true;
+      },
+      err => {
+        this.errors = err;
+      }
+    );
+  }
+
   submitForm() {
     this.isSubmitting = true;
     this.errors = new Errors();
     const credentials = this.authForm.value;
     this.userService
-    .attemptAuth(this.authType, credentials)
+    .attemptAuth(this.authType, {'grant_type ': credentials.password,'username': credentials.email,'password': credentials.otp})
     .subscribe(
       data => this.router.navigateByUrl('/' + this.userService.getCurrentUser().landingPage),
       err => {
