@@ -6,14 +6,15 @@ import {AuthModule} from './auth/auth.module';
 import {HomeModule} from './home/home.module';
 import {LogoutModule} from './logout/logout.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {DataTableModule} from 'angular2-datatable';
 import {DataDictionaryModule} from './data-dictionary/data-dictionary.module';
 import {DataQualityModule} from './data-quality/data-quality.module';
 import {ReportAvailabilityModule} from './report-availability/report-availability.module';
 import {CertifiedReportModule} from './certified-report/certified-report.module';
 import {TrainingModule} from './training/training.module';
 import {SelfserviceReportModule} from './selfservice-report/selfservice-report.module';
-import {ChartModule} from 'primeng/chart';
+import {ChartModule} from 'primeng/primeng';
+import {DataTableModule} from 'primeng/primeng';
+
 
 import {
     ApiService,
@@ -50,7 +51,8 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], {useHash: fals
         CertifiedReportModule,
         TrainingModule,
         SelfserviceReportModule,
-        ChartModule
+        ChartModule,
+        DataTableModule
     ],
     providers: [
         ApiService,

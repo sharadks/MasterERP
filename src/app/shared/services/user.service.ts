@@ -62,8 +62,7 @@ export class UserService {
   }
 
   attemptAuth(type, credentials): Observable<User> {
-    console.log("=============", credentials);
-    return this.apiService.post(environment.login_path, credentials)
+    return this.apiService.formpost(environment.login_path, credentials)
     .map(
       data => {
         //this.setAuth(data.user);

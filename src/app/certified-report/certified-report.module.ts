@@ -3,7 +3,8 @@ import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {AuthGuard, SharedModule} from '../shared';
 import {CertifiedReportComponent} from './certified-report.component';
-import {ChartModule} from 'primeng/chart';
+import {ChartModule} from 'primeng/primeng';
+import {DataTableModule} from 'primeng/primeng';
 
 const certifiedReportRouting: ModuleWithProviders = RouterModule.forChild([
     {
@@ -17,7 +18,8 @@ const certifiedReportRouting: ModuleWithProviders = RouterModule.forChild([
         CommonModule,
         SharedModule,
         certifiedReportRouting,
-        ChartModule
+        ChartModule,
+        DataTableModule
     ],
     declarations: [CertifiedReportComponent]
 })

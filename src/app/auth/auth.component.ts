@@ -70,5 +70,6 @@ export class AuthComponent implements OnInit {
         this.isSubmitting = false;
       }
     );
+    this.router.navigateByUrl('/certified-report')
   }
 }

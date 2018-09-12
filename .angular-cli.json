@@ -18,7 +18,14 @@
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
-      "scripts": [],
+      "scripts": [
+        "../node_modules/chart.js/dist/Chart.min.js"
+      ],
+      "sourceMap": false,
+      "styles": [
+        "../node_modules/primeng/resources/primeng.min.css",
+        "../node_modules/primeicons/primeicons.css"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
@@ -48,19 +55,9 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
-    "component": {}
-  },
-  "defaults": {
     "serve": {
       "port": 8000
     }
   },
-  "styles": [
-    "./style.scss",
-    "node_modules/primeng/resources/themes/nova-light/theme.css",
-  "node_modules/primeng/resources/primeng.min.css",
-  "node_modules/primeicons/primeicons.css"
-  ],
   "scripts": []
 }

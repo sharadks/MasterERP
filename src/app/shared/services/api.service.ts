@@ -26,6 +26,17 @@ export class ApiService {
     return new Headers(headersConfig);
   }
 
+  private setformHeaders(): Headers {
+    const headersConfig = {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Accept': 'application/json'
+    };
+    if (this.jwtService.getToken()) {
+      headersConfig['Authorization'] = `Token ${this.jwtService.getToken()}`;
+    }
+    return new Headers(headersConfig);
+  }
+
   private formatErrors(error: any) {
      return Observable.throw(error.json());
   }
@@ -51,6 +62,16 @@ export class ApiService {
       `${environment.api_url}${path}`,
       JSON.stringify(body),
       { headers: this.setHeaders() }
+    )
+    .catch(this.formatErrors)
+    .map((res: Response) => res.json());
+  }
+
+  formpost(path: string, body: Object = {}): Observable<any> {
+    return this.http.post(
+      `${environment.api_url}${path}`,
+      JSON.stringify(body),
+      { headers: this.setformHeaders() }
     )
     .catch(this.formatErrors)
     .map((res: Response) => res.json());
