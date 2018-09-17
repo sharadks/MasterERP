@@ -24,4 +24,13 @@ export class ReportService {
         return this.apiService.get(url + '?date=' + date)
             .map((data) => data);
     };
+
+    getReportData(url, data): Observable<any> {
+        return this.apiService.post(url, data)
+            .map(
+            data => {
+                return data;
+            }
+        );
+    };
 }

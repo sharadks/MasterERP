@@ -49,9 +49,14 @@ export class AuthComponent implements OnInit {
     const credentials = this.authForm.value;
     this.userService.getOTP({'login_id': credentials.email,'password':credentials.password}).subscribe(
       data => {
-        this.showOtp = true;
+        if(data.valid == true) {
+          this.showOtp = true;
+        }else {
+          this.showOtp = false;
+        }
       },
       err => {
+        this.showOtp = false;
         this.errors = err;
       }
     );

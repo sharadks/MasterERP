@@ -1,7 +1,25 @@
+
 <div class="row">
+    <div class="col-sm-6">
+            <div class="row">
+                    <div class="col-sm-4"> 
+                            <label class="pull-right">Search:</label>  
+                        </div>
+                        <div class="col-sm-4">  
+                                <input type="text" name="search" id="search" [(ngModel)]="searchedValue" class="form-control" (blur)="doSearch(searchedValue)" >
+                            </div>
+                            <div class="col-sm-4">  
+                                    <input type="button"  class='btn btn-primary pull-left'  value='Search' (click)="doSearch(searchedValue)">
+                                </div>
+            </div>
+    </div>
+    <div class="col-sm-6">
+    </div>
+</div>
+
+<div class="row" style="margin: 20px">
     <div class="col-sm-12">
-        Ready to show GRID
-        <p-dataTable [value]="tableData" [tableStyle]="{'text-align':'center'}" scrollable="true" scrollHeight="350px" [resizableColumns]="true">
+        <p-dataTable [value]="tableData" [tableStyle]="{'text-align':'center'}" scrollable="true" scrollHeight="350px" [resizableColumns]="true" [paginator]="true" [rows]="10" [pageLinks]="6">
             <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header" [sortable]="true" [filter]="true" [style]="{'width':'100px'}" columnResizeMode="expand" >
             </p-column>
           </p-dataTable>

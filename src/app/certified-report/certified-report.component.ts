@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Errors, ReportService } from '../shared';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-certified-report',
@@ -13,199 +15,7 @@ public tableData: any;
 public colValues:any;
 private cols: any[] = [];
 
-  constructor() {
-
-
-    
-
-    this.tableData = [
-        {
-            client: "Apple",
-            dealer_id: 24,
-            dealer_code: "1588146",
-            dealer_name: "UMANG BUSINESS CONSULTANT PVT LTD",
-            address: "UMANG BUSINESS CONSULTANT PVT LTD,55, N.S.B ROAD, RANIGANJ",
-            city: "RANIGANJ",
-            pin: "713347",
-            state: "West Bengal",
-            country: "India",
-            pan: "AABCU1618E",
-            gstin: "19AABCU1618E1ZK",
-            contact_person: "RAHUL DASGUPTA",
-            mobile: "7044059769",
-            email: "udit@udgroup.co.in",
-            designation: "Store Sales Executive",
-            total_order: 2
-        },
-        {
-            client: "Apple",
-            dealer_id: 24,
-            dealer_code: "1588146",
-            dealer_name: "UMANG BUSINESS CONSULTANT PVT LTD",
-            address: "UMANG BUSINESS CONSULTANT PVT LTD,55, N.S.B ROAD, RANIGANJ",
-            city: "RANIGANJ",
-            pin: "713347",
-            state: "West Bengal",
-            country: "India",
-            pan: "AABCU1618E",
-            gstin: "19AABCU1618E1ZK",
-            contact_person: "RAHUL DASGUPTA",
-            mobile: "7044059769",
-            email: "udit@udgroup.co.in",
-            designation: "Store Sales Executive",
-            total_order: 2
-        },
-        {
-            client: "Apple",
-            dealer_id: 24,
-            dealer_code: "1588146",
-            dealer_name: "UMANG BUSINESS CONSULTANT PVT LTD",
-            address: "UMANG BUSINESS CONSULTANT PVT LTD,55, N.S.B ROAD, RANIGANJ",
-            city: "RANIGANJ",
-            pin: "713347",
-            state: "West Bengal",
-            country: "India",
-            pan: "AABCU1618E",
-            gstin: "19AABCU1618E1ZK",
-            contact_person: "RAHUL DASGUPTA",
-            mobile: "7044059769",
-            email: "udit@udgroup.co.in",
-            designation: "Store Sales Executive",
-            total_order: 2
-        },
-        {
-            client: "Apple",
-            dealer_id: 24,
-            dealer_code: "1588146",
-            dealer_name: "UMANG BUSINESS CONSULTANT PVT LTD",
-            address: "UMANG BUSINESS CONSULTANT PVT LTD,55, N.S.B ROAD, RANIGANJ",
-            city: "RANIGANJ",
-            pin: "713347",
-            state: "West Bengal",
-            country: "India",
-            pan: "AABCU1618E",
-            gstin: "19AABCU1618E1ZK",
-            contact_person: "RAHUL DASGUPTA",
-            mobile: "7044059769",
-            email: "udit@udgroup.co.in",
-            designation: "Store Sales Executive",
-            total_order: 2
-        },
-        {
-            client: "Apple",
-            dealer_id: 24,
-            dealer_code: "1588146",
-            dealer_name: "UMANG BUSINESS CONSULTANT PVT LTD",
-            address: "UMANG BUSINESS CONSULTANT PVT LTD,55, N.S.B ROAD, RANIGANJ",
-            city: "RANIGANJ",
-            pin: "713347",
-            state: "West Bengal",
-            country: "India",
-            pan: "AABCU1618E",
-            gstin: "19AABCU1618E1ZK",
-            contact_person: "RAHUL DASGUPTA",
-            mobile: "7044059769",
-            email: "udit@udgroup.co.in",
-            designation: "Store Sales Executive",
-            total_order: 2
-        },
-        {
-            client: "Apple",
-            dealer_id: 24,
-            dealer_code: "1588146",
-            dealer_name: "UMANG BUSINESS CONSULTANT PVT LTD",
-            address: "UMANG BUSINESS CONSULTANT PVT LTD,55, N.S.B ROAD, RANIGANJ",
-            city: "RANIGANJ",
-            pin: "713347",
-            state: "West Bengal",
-            country: "India",
-            pan: "AABCU1618E",
-            gstin: "19AABCU1618E1ZK",
-            contact_person: "RAHUL DASGUPTA",
-            mobile: "7044059769",
-            email: "udit@udgroup.co.in",
-            designation: "Store Sales Executive",
-            total_order: 2
-        },
-        {
-            client: "Apple",
-            dealer_id: 24,
-            dealer_code: "1588146",
-            dealer_name: "UMANG BUSINESS CONSULTANT PVT LTD",
-            address: "UMANG BUSINESS CONSULTANT PVT LTD,55, N.S.B ROAD, RANIGANJ",
-            city: "RANIGANJ",
-            pin: "713347",
-            state: "West Bengal",
-            country: "India",
-            pan: "AABCU1618E",
-            gstin: "19AABCU1618E1ZK",
-            contact_person: "RAHUL DASGUPTA",
-            mobile: "7044059769",
-            email: "udit@udgroup.co.in",
-            designation: "Store Sales Executive",
-            total_order: 2
-        },
-        {
-            client: "Apple",
-            dealer_id: 24,
-            dealer_code: "1588146",
-            dealer_name: "UMANG BUSINESS CONSULTANT PVT LTD",
-            address: "UMANG BUSINESS CONSULTANT PVT LTD,55, N.S.B ROAD, RANIGANJ",
-            city: "RANIGANJ",
-            pin: "713347",
-            state: "West Bengal",
-            country: "India",
-            pan: "AABCU1618E",
-            gstin: "19AABCU1618E1ZK",
-            contact_person: "RAHUL DASGUPTA",
-            mobile: "7044059769",
-            email: "udit@udgroup.co.in",
-            designation: "Store Sales Executive",
-            total_order: 2
-        },
-        {
-            client: "Apple",
-            dealer_id: 24,
-            dealer_code: "1588146",
-            dealer_name: "UMANG BUSINESS CONSULTANT PVT LTD",
-            address: "UMANG BUSINESS CONSULTANT PVT LTD,55, N.S.B ROAD, RANIGANJ",
-            city: "RANIGANJ",
-            pin: "713347",
-            state: "West Bengal",
-            country: "India",
-            pan: "AABCU1618E",
-            gstin: "19AABCU1618E1ZK",
-            contact_person: "RAHUL DASGUPTA",
-            mobile: "7044059769",
-            email: "udit@udgroup.co.in",
-            designation: "Store Sales Executive",
-            total_order: 2
-        },
-        {
-	client: "Apple",
-	dealer_id: 24,
-	dealer_code: "1588146",
-	dealer_name: "UMANG BUSINESS CONSULTANT PVT LTD",
-	address: "UMANG BUSINESS CONSULTANT PVT LTD,55, N.S.B ROAD, RANIGANJ",
-	city: "RANIGANJ",
-	pin: "713347",
-	state: "West Bengal",
-	country: "India",
-	pan: "AABCU1618E",
-	gstin: "19AABCU1618E1ZK",
-	contact_person: "RAHUL DASGUPTA",
-	mobile: "7044059769",
-	email: "udit@udgroup.co.in",
-	designation: "Store Sales Executive",
-	total_order: 2
-}
-    ];
-
-    this.colValues = Object.keys(this.tableData[0]);
-    for(let i=0;i<this.colValues.length;i++){
-        this.cols.push({field: this.colValues[i], header: this.colValues[i]})
-    }
-
+  constructor(private reportService: ReportService) {
   this.pieColors = ['#3366CC', '#DC3912', '#FF9900', '#109618', '#990099',
 '#3B3EAC', '#0099C6', '#DD4477', '#66AA00', '#B82E2E',
 '#316395', '#994499', '#22AA99', '#AAAA11', '#6633CC',
@@ -228,6 +38,48 @@ private cols: any[] = [];
    }
 
   ngOnInit() {
+    this.reportService.getReportData(environment.report_path,{ "Draw" : "1", "Start" : "1", "Length" : "222",
+    Search : { "Value" : "", "Regex" : "" },
+    Order : [{"Column" : "0", "Dir" : "asc"}, {"Column" : "1", "Dir" : ""}, {"Column" : "2", "Dir" : ""}],
+    Columns : [{ "Data" : "client", "Name" : "Apple", "Searchable" : "true", "Orderable" : "false"}]
+    }).subscribe(
+        data => {
+         console.log("Report Data", data);
+         this.tableData = data.data;
+         console.log(this.tableData);
+         this.colValues = Object.keys(this.tableData[0]);
+         for(let i=0;i<this.colValues.length;i++){
+             this.cols.push({field: this.colValues[i], header: this.colValues[i]})
+         }
+        },
+        err => {
+          //this.errors = err;
+        }
+      );
+  }
+
+  doSearch(value) {
+    this.reportService.getReportData(environment.report_path,{ "Draw" : "1", "Start" : "1", "Length" : "20",
+    Search : { "Value" : value, "Regex" : "" },
+    Order : [{"Column" : "0", "Dir" : "asc"}, {"Column" : "1", "Dir" : ""}, {"Column" : "2", "Dir" : ""}],
+    Columns : [{ "Data" : "client", "Name" : "Apple", "Searchable" : "true", "Orderable" : "false"}]
+    }).subscribe(
+        data => {
+         console.log("Report Data", data);
+         this.tableData = data.data;
+         console.log(this.tableData);
+         if(this.tableData.length) {
+            this.colValues = Object.keys(this.tableData[0]);
+            for(let i=0;i<this.colValues.length;i++){
+                this.cols.push({field: this.colValues[i], header: this.colValues[i]})
+            }
+         }
+        },
+        err => {
+          //this.errors = err;
+        }
+      );
+
   }
 
 }

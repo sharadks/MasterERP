@@ -104,7 +104,7 @@ export class GenericReportComponent implements OnInit {
     }
 
     public onGet(): any[] {
-        this.reportservice.getOffReport(environment.off_report_path, this._uridate).subscribe(
+        this.reportservice.getOffReport(environment.report_path, this._uridate).subscribe(
             (data) => {
                 this.temp = Object.keys(data).map((key) => {
                     return data[key];

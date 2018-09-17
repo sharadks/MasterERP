@@ -71,7 +71,7 @@ export class UserService {
     );
   }
 
-  getOTP(credentials): Observable<User> {
+  getOTP(credentials): Observable<any> {
     return this.apiService.post(environment.get_Otp_path, credentials)
     .map(
       data => {
