@@ -14,6 +14,7 @@ public pieColors : any;
 public tableData: any;
 public colValues:any;
 private cols: any[] = [];
+private postObject: any;
 
   constructor(private reportService: ReportService) {
   this.pieColors = ['#3366CC', '#DC3912', '#FF9900', '#109618', '#990099',
@@ -35,16 +36,18 @@ private cols: any[] = [];
              backgroundColor: this.pieColors,
 
         }
+        this.postObject = 
+        { 
+        Draw : "1", "Start" : "1", "Length" : "222",
+        Search : { "Value" : "", "Regex" : "" },
+        Order : [{"Column" : "0", "Dir" : "asc"}, {"Column" : "1", "Dir" : ""}, {"Column" : "2", "Dir" : ""}],
+        Columns : [{ "Data" : "", "Name" : "", "Searchable" : "true", "Orderable" : "false"}]
+        }
    }
 
   ngOnInit() {
-    this.reportService.getReportData(environment.report_path,{ "Draw" : "1", "Start" : "1", "Length" : "222",
-    Search : { "Value" : "", "Regex" : "" },
-    Order : [{"Column" : "0", "Dir" : "asc"}, {"Column" : "1", "Dir" : ""}, {"Column" : "2", "Dir" : ""}],
-    Columns : [{ "Data" : "client", "Name" : "Apple", "Searchable" : "true", "Orderable" : "false"}]
-    }).subscribe(
+    this.reportService.getReportData(environment.report_path,this.postObject).subscribe(
         data => {
-         console.log("Report Data", data);
          this.tableData = data.data;
          console.log(this.tableData);
          this.colValues = Object.keys(this.tableData[0]);
@@ -59,11 +62,8 @@ private cols: any[] = [];
   }
 
   doSearch(value) {
-    this.reportService.getReportData(environment.report_path,{ "Draw" : "1", "Start" : "1", "Length" : "20",
-    Search : { "Value" : value, "Regex" : "" },
-    Order : [{"Column" : "0", "Dir" : "asc"}, {"Column" : "1", "Dir" : ""}, {"Column" : "2", "Dir" : ""}],
-    Columns : [{ "Data" : "client", "Name" : "Apple", "Searchable" : "true", "Orderable" : "false"}]
-    }).subscribe(
+    this.postObject.Search.Value = value;
+    this.reportService.getReportData(environment.report_path,this.postObject).subscribe(
         data => {
          console.log("Report Data", data);
          this.tableData = data.data;
