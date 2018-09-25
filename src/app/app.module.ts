@@ -27,7 +27,7 @@ import {
     ReportService
 } from './shared';
 
-const rootRouting: ModuleWithProviders = RouterModule.forRoot([], {useHash: false});
+const rootRouting: ModuleWithProviders = RouterModule.forRoot([], {useHash:true});
 
 @NgModule({
     declarations: [
