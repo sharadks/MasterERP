@@ -30,6 +30,15 @@ export class ReportService {
             .map((data) => data);
     };
 
+    updateDateFilters(url, data): Observable<any> {
+        return this.apiService.post(url, data)
+            .map(
+            data => {
+                return data;
+            }
+        );
+    };
+
     getGridData(url, data): Observable<any> {
         return this.apiService.post(url, data)
             .map(

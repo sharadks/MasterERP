@@ -16,5 +16,10 @@ export const environment = {
     get_order_by_emp:'/api/DealerReports/GetDashboardPortalOrderPlaceByEmployees',
     get_order_by_dealer:'/api/DealerReports/GetDashboardPortalOrderPlaceByDealers',
     get_date_filter:'/api//Dashboard/DateFilter?user_id=',
+    update_date_filter:'/api/Dashboard/UpdateDateFilter',
+    total_order_recived_by_dealer:'/api/DealerReports/GetDashboardPortalDealerOrders',
+    total_order_recived_by_emp:'/api/DealerReports/GetDashboardPortalEmpOrders',
+    total_order_qnty:'/api/DealerReports/GetDashboardPortalTotalOrderQty',
+    total_order_amount:'/api/DealerReports/GetDashboardPortalTotalOrderAmount',
     login_auth_path: '/users/user.json'
 };

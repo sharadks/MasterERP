@@ -21,8 +21,8 @@ private postObject: any;
 private portalFigures: any;
 private currentUser: any;
 private portalList: any;
-private toDate: NgbDateStruct;
-private fromDate : NgbDateStruct;
+private toDate: any = {'year':null,'month':null,'day':null};
+private fromDate : any = {'year':null,'month':null,'day':null};
 private portalId : any;
 
   constructor(private reportService: ReportService, private jwtService: JwtService, private calendar: NgbCalendar) {
@@ -49,13 +49,13 @@ private portalId : any;
         var url = environment.get_date_filter+this.currentUser.userId;
         this.reportService.getDateFilters(url).subscribe(
           data => {
-              this.toDate.year = (data.to_date.split(' ')[0]).split('/')[2];
-              this.toDate.month = (data.to_date.split(' ')[0]).split('/')[1];
-              this.toDate.day = (data.to_date.split(' ')[0]).split('/')[0];
-              this.fromDate.year = (data.from_date.split(' ')[0]).split('/')[2];
-              this.fromDate.month = (data.from_date.split(' ')[0]).split('/')[1];
-              this.fromDate.day = (data.from_date.split(' ')[0]).split('/')[0];
-              console.log("------------------", this.toDate,this.fromDate )
+              this.toDate.year = Number((data.to_date.split(' ')[0]).split('/')[2]);
+              this.toDate.month = Number((data.to_date.split(' ')[0]).split('/')[1]);
+              this.toDate.day = Number((data.to_date.split(' ')[0]).split('/')[0]);              
+              this.fromDate.year = Number((data.from_date.split(' ')[0]).split('/')[2]);
+              this.fromDate.month = Number((data.from_date.split(' ')[0]).split('/')[1]);
+              this.fromDate.day = Number((data.from_date.split(' ')[0]).split('/')[0]);
+              console.log("------------------",this.fromDate,  this.toDate );
           },
           err => {
             //this.errors = err;
@@ -143,7 +143,7 @@ private portalId : any;
     }
 
     getDataForFilters (portalId){
-      this.portalId = portalId;
+     this.portalId = portalId;
      var url = environment.get_dashboard_figure +this.currentUser.userId+'&portal_id='+portalId;
           this.reportService.getPortalFigures(url).subscribe(
             data => {
@@ -154,4 +154,28 @@ private portalId : any;
             }
           );
     }
+
+    updateDateFrom(value){
+        console.log("=================", value);
+        var DateObject = { user_id: this.currentUser.userId, from_date: "15/09/2018", to_date: "15/10/2018"}
+        this.reportService.updateDateFilters(environment.update_date_filter, DateObject).subscribe(
+          data => {
+              
+          },
+          err => {
+            //this.errors = err;
+          }
+        );
+    }
+    updateDateTo(value){
+      console.log("=================", value);
+      var DateObject = { user_id: this.currentUser.userId, from_date: "15/09/2018", to_date: "15/10/2018"}
+      this.reportService.updateDateFilters(environment.update_date_filter, DateObject).subscribe(
+        data => {
+        },
+        err => {
+          //this.errors = err;
+        }
+      );
+  }
 }
