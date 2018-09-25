@@ -15,6 +15,30 @@ export class ReportService {
             .map((data) => data);
     };
 
+    getPortalFigures(url): Observable<any> {
+        return this.apiService.get(url)
+            .map((data) => data);
+    };
+
+    getPortalList(url): Observable<any> {
+        return this.apiService.get(url)
+            .map((data) => data);
+    };
+
+    getDateFilters(url): Observable<any> {
+        return this.apiService.get(url)
+            .map((data) => data);
+    };
+
+    getGridData(url, data): Observable<any> {
+        return this.apiService.post(url, data)
+            .map(
+            data => {
+                return data;
+            }
+        );
+    };
+
     getSlaCompliance(url, date): Observable<any> {
         return this.apiService.get(url + '?date=' + date)
             .map((data) => data);

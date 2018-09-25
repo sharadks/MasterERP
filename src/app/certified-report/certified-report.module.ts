@@ -5,6 +5,8 @@ import {AuthGuard, SharedModule} from '../shared';
 import {CertifiedReportComponent} from './certified-report.component';
 import {ChartModule} from 'primeng/primeng';
 import {DataTableModule} from 'primeng/primeng';
+import { Component, OnInit } from '@angular/core';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 const certifiedReportRouting: ModuleWithProviders = RouterModule.forChild([
     {
@@ -19,7 +21,8 @@ const certifiedReportRouting: ModuleWithProviders = RouterModule.forChild([
         SharedModule,
         certifiedReportRouting,
         ChartModule,
-        DataTableModule
+        DataTableModule,
+        NgbModule
     ],
     declarations: [CertifiedReportComponent]
 })

@@ -17,11 +17,10 @@ export class ApiService {
   private setHeaders(): Headers {
     const headersConfig = {
       'Content-Type': 'application/json',
-      'Accept': 'application/json'
+      'Accept': 'application/json',
     };
-
     if (this.jwtService.getToken()) {
-      headersConfig['Authorization'] = `Token ${this.jwtService.getToken()}`;
+      headersConfig['Authorization'] = `Bearer ${this.jwtService.getToken()}`;
     }
     return new Headers(headersConfig);
   }
@@ -29,10 +28,10 @@ export class ApiService {
   private setformHeaders(): Headers {
     const headersConfig = {
       'Content-Type': 'application/x-www-form-urlencoded',
-      'Accept': 'application/json'
+      'Accept': 'application/json',
     };
     if (this.jwtService.getToken()) {
-      headersConfig['Authorization'] = `Token ${this.jwtService.getToken()}`;
+      //headersConfig['Authorization'] = `Bearer ${this.jwtService.getToken()}`;
     }
     return new Headers(headersConfig);
   }
@@ -67,10 +66,11 @@ export class ApiService {
     .map((res: Response) => res.json());
   }
 
-  formpost(path: string, body: Object = {}): Observable<any> {
+  formpost(path: string, body: any): Observable<any> {
+    var data ="userName="+body.username+"&password="+body.password+"&grant_type=password";
     return this.http.post(
       `${environment.api_url}${path}`,
-      JSON.stringify(body),
+      data,
       { headers: this.setformHeaders() }
     )
     .catch(this.formatErrors)

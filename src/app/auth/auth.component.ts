@@ -62,19 +62,22 @@ export class AuthComponent implements OnInit {
     );
   }
 
+
   submitForm() {
     this.isSubmitting = true;
     this.errors = new Errors();
     const credentials = this.authForm.value;
     this.userService
-    .attemptAuth(this.authType, {'grant_type ': credentials.password,'username': credentials.email,'password': credentials.otp})
+    .attemptAuth(this.authType, {'grant_type ': 'password','username': credentials.email,'password': credentials.otp})
     .subscribe(
-      data => this.router.navigateByUrl('/' + this.userService.getCurrentUser().landingPage),
+      data => {
+        this.userService.setAuth(data);
+        this.router.navigateByUrl('/certified-report')   
+      },
       err => {
         this.errors = err;
         this.isSubmitting = false;
       }
     );
-    this.router.navigateByUrl('/certified-report')
   }
 }

@@ -1,6 +1,111 @@
 
-<div *ngIf='tableData'>
-<div class="row" >
+<div>
+
+<div class="row">
+<div class="col-sm-1">
+    <label class="pull-right">Filters:</label> 
+
+   
+
+</div>
+<div class="col-sm-3">
+                <form class="form-inline">
+                                <div class="form-group">
+                                  <div class="input-group">
+                                    <input class="form-control" placeholder="yyyy/mm/dd"
+                                           name="dp1" [(ngModel)]="fromDate" ngbDatepicker #d1="ngbDatepicker">
+                                    <div class="input-group-append">
+                                      <button class="btn btn-outline-secondary calendar" (click)="d1.toggle()" type="button"></button>
+                                    </div>
+                                  </div>
+                                </div>
+                                {{fromDate | json}}
+                        </form>
+</div>
+
+<div class="col-sm-3">
+                <form class="form-inline">
+                                <div class="form-group">
+                                  <div class="input-group">
+                                    <input class="form-control" placeholder="yyyy/mm/dd"
+                                           name="dp2" [(ngModel)]="toDate" ngbDatepicker #d2="ngbDatepicker">
+                                    <div class="input-group-append">
+                                      <button class="btn btn-outline-secondary calendar" (click)="d2.toggle()" type="button"></button>
+                                    </div>
+                                  </div>
+                                </div>
+                                {{toDate | json}}
+                        </form>
+</div>
+<div class="col-sm-2">
+                <select (change)="getDataForFilters($event.target.value)" class="form-control">
+                                <option value="0">--All--</option>
+                                <option *ngFor="let portal of portalList" value={{portal.portal_id}}>
+                                    {{portal.portal_name}}
+                                </option>
+                </select>
+</div>
+</div>
+        <div class="card card-block bg-faded row" style="margin: 20px" *ngIf='portalFigures'>
+                <div class="col-sm-12">
+                        <table class="table table-bordered">
+                                <thead>
+                                  <tr>
+                                    <th>Total Portals</th>
+                                    <th>Total Dealers</th>
+                                    <th>Total Employees</th>
+                                    <th>Order place by Dealers</th>
+                                    <th>Order Place by Employees</th>
+                                    <th>Total Orders Received by Dealer</th>
+                                    <th>Total Orders Received by Employees</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td (click)='getGridData("get_total_portal")'>{{portalFigures.total_protal}}</td>
+                                    <td (click)='getGridData("get_total_dealer")'>{{portalFigures.total_dealers}}</td>
+                                    <td (click)='getGridData("get_total_emp")'>{{portalFigures.total_emp}}</td>
+                                    <td (click)='getGridData("get_order_by_dealer")'>{{portalFigures.order_place_by_dealers}}</td>
+                                    <td (click)='getGridData("get_order_by_emp")'>{{portalFigures.order_place_by_emp}}</td>
+                                    <td>{{portalFigures.total_order_received_by_dealer}}</td>
+                                    <td>{{portalFigures.total_order_received_by_emp}}</td>
+                                  </tr>
+                                </tbody>
+                        </table>
+                </div>
+            </div>
+
+            <div class="card card-block bg-faded row" style="margin: 20px">
+                    <div class="col-sm-12">
+                            <table class="table table-bordered">
+                                    <thead>
+                                      <tr>
+                                        <th>Total Order Qty</th>
+                                        <th>Total Order Amount</th>
+                                        <th>Total order dispatch</th>
+                                        <th>Orde Dispatch on Time</th>
+                                        <th>Delay Orders</th>
+                                        <th>Total order Pending</th>
+                                        <th>Cancel Orders</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>{{portalFigures.total_order_qty}}</td>
+                                        <td>{{portalFigures.total_order_amt}}</td>
+                                        <td>{{portalFigures.total_order_dispatch}}</td>
+                                        <td>{{portalFigures.order_dispatch_on_time}}</td>
+                                        <td>{{portalFigures.delary_orders}}</td>
+                                        <td>{{portalFigures.total_order_pending}}</td>
+                                        <td>{{portalFigures.cancel_order}}</td>
+                                      </tr>
+                                    </tbody>
+                            </table>
+                    </div>
+                </div>
+        
+
+<!-- <div class="row" >
     <div class="col-sm-6">
             <div class="row">
                     <div class="col-sm-3"> 
@@ -19,9 +124,9 @@
     </div>
     <div class="col-sm-6">
     </div>
-</div>
+</div> -->
 
-<div class="row" style="margin: 20px">
+<div class="row" style="margin: 20px" *ngIf="tableData">
     <div class="col-sm-12">
         <p-dataTable [value]="tableData" [tableStyle]="{'text-align':'center'}" scrollable="true" scrollHeight="350px" [resizableColumns]="true" [paginator]="true" [rows]="10" [pageLinks]="6">
                 <p-header>
@@ -34,13 +139,15 @@
 </div>
 
 
-<div class="row">
+<!-- <div class="row">
 <div class="col-sm-6">
     <p>
         <p-chart type="line" [data]="data"></p-chart>
         </p>
 </div>
-</div>
+</div> -->
+
+
 </div>
 
 
