@@ -55,10 +55,6 @@ export class UserService {
   purgeAuth() {
     // Remove JWT from localstorage
     this.jwtService.destroyToken();
-    // Set current user to an empty object
-    this.currentUserSubject.next(new User());
-    // Set auth status to false
-    this.isAuthenticatedSubject.next(false);
   }
 
   attemptAuth(type, credentials): Observable<User> {

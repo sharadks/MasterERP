@@ -96,11 +96,11 @@
               <tr>
                  <td (click)='getGridData("total_order_qnty")'>{{portalFigures.total_order_qty}}</td>
                  <td (click)='getGridData("total_order_amount")'>{{portalFigures.total_order_amt}}</td>
-                 <td (click)='getGridData("total_order_recived_by_emp")'>{{portalFigures.total_order_dispatch}}</td>
-                 <td (click)='getGridData("total_order_recived_by_emp")'>{{portalFigures.order_dispatch_on_time}}</td>
-                 <td (click)='getGridData("total_order_recived_by_emp")'>{{portalFigures.delary_orders}}</td>
-                 <td (click)='getGridData("total_order_recived_by_emp")'>{{portalFigures.total_order_pending}}</td>
-                 <td (click)='getGridData("total_order_recived_by_emp")'>{{portalFigures.cancel_order}}</td>
+                 <td (click)='getGridData("total_order_dispatch")'>{{portalFigures.total_order_dispatch}}</td>
+                 <td (click)='getGridData("order_dispatch_ontime")'>{{portalFigures.order_dispatch_on_time}}</td>
+                 <td (click)='getGridData("delayed_order")'>{{portalFigures.delary_orders}}</td>
+                 <td (click)='getGridData("total_order_pending")'>{{portalFigures.total_order_pending}}</td>
+                 <td (click)='getGridData("cancel_order")'>{{portalFigures.cancel_order}}</td>
               </tr>
            </tbody>
         </table>
@@ -128,7 +128,7 @@
      </div> -->
   <div class="row" style="margin: 20px" *ngIf="tableData">
      <div class="col-sm-12">
-        <p-dataTable [value]="tableData" [tableStyle]="{'text-align':'center'}" scrollable="true" scrollHeight="350px" [resizableColumns]="true" [paginator]="true" [rows]="10" [pageLinks]="6">
+        <p-dataTable [value]="tableData" [tableStyle]="{'text-align':'center'}" scrollable="true" scrollHeight="350px" [resizableColumns]="true" [paginator]="true" [rows]="10" [pageLinks]="6" [rowsPerPageOptions]='[5,10,15]'>
         <p-header>
         </p-header>
         <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header" [sortable]="true" [filter]="true" [style]="{'width':'100px'}" columnResizeMode="expand" >

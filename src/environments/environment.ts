@@ -26,6 +26,11 @@ export const environment = {
     total_order_recived_by_emp:'/api/DealerReports/GetDashboardPortalEmpOrders',
     total_order_qnty:'/api/DealerReports/GetDashboardPortalTotalOrderQty',
     total_order_amount:'/api/DealerReports/GetDashboardPortalTotalOrderAmount',
+    total_order_dispatch:'/api/DealerReports/GetDashboardPortalTotalOrderDispatch',
+    order_dispatch_ontime:'/api/DealerReports/GetDashboardPortalTotalOrderOnTime',
+    delayed_order:'/api/DealerReports/GetDashboardPortalTotalOrderDelay',
+    total_order_pending:'/api/DealerReports/GetDashboardPortalTotalOrderPending',
+    cancel_order:'/api/DealerReports/GetDashboardPortalTotalOrderCancel',
     login_auth_path: '/users/user.json'
 };
 

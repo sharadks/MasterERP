@@ -14,7 +14,7 @@ export class JwtService {
     }
 
     destroyToken() {
-        //window.localStorage.clear();
+        window.localStorage.clear();
     }
 
     setCurrentUser(User) {
