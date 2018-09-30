@@ -9,9 +9,9 @@ const homeRouting: ModuleWithProviders = RouterModule.forChild([
     {
         path: '',
         component: HomeComponent,
-        resolve: {
-            isAuthenticated: HomeAuthResolver
-        }
+        // resolve: {
+        //     isAuthenticated: HomeAuthResolver
+        // }
     }
 ]);
 
