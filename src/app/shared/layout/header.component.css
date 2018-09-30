@@ -1,0 +1,12 @@
+#topbar.bg-dark{background:#2a3b4c!important;}
+#topbar .navbar-header {
+    width: 150px !important;
+}
+#topbar .navbar-header #logo{position:absolute; top:0px; left:27px; padding:0px;}
+.center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+.navbar-dark .navbar-nav .nav-link{color:#fff;}
+.navbar-nav > li > a {line-height:20px;}
