@@ -12,12 +12,12 @@ export class AppComponent implements  OnInit, OnChanges {
   }
 
   ngOnInit() {
-    this.userService.populate();
-    this.currentUser = this.userService.getCurrentUser();
+    //this.userService.populate();
+    //this.currentUser = this.userService.getCurrentUser();
     // this.router.navigateByUrl('/' + this.currentUser.landingPage);
 
   }
   ngOnChanges() {
-    this.userService.populate();
+   // this.userService.populate();
   }
 }

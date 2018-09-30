@@ -10,9 +10,9 @@
                  <form class="form-inline">
                     <div class="form-group">
                        <div class="input-group">
-                          <input #box class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="fromDate" ngbDatepicker #d="ngbDatepicker"
-                          (ngModelChange)="updateDateFrom($event)">
-                          <button class="input-group-addon" (click)="d.toggle()" type="button">
+                          <input  class="form-control" placeholder="yyyy-mm-dd" name="d1" [(ngModel)]="fromDate" ngbDatepicker #d1="ngbDatepicker"
+                          (ngModelChange)="updateDate(fromDate,toDate)">
+                          <button class="input-group-addon" (click)="d1.toggle()" type="button">
                           <i class="fa fa-calendar"></i>
                           </button>
                        </div>
@@ -29,8 +29,8 @@
                  <form class="form-inline">
                     <div class="form-group">
                        <div class="input-group">
-                          <input #box class="form-control" placeholder="yyyy-mm-dd" name="d2" [(ngModel)]="toDate" ngbDatepicker #d2="ngbDatepicker"
-                          (ngModelChange)="updateDateTo($event)">
+                          <input  class="form-control" placeholder="yyyy-mm-dd" name="d2" [(ngModel)]="toDate" ngbDatepicker #d2="ngbDatepicker"
+                          (ngModelChange)="updateDate(fromDate,toDate)">
                           <button class="input-group-addon" (click)="d2.toggle()" type="button">
                           <i class="fa fa-calendar"></i>
                           </button>
