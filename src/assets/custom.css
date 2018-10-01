@@ -1,7 +1,7 @@
 /************** Custome CSS Define by sanjay ****************/
 
 body {
-    background: #F3F3F4;
+    background: #fff;
     font-size: 13px;
     margin: 0px;
     font-family: 'Open Sans', sans-serif;
@@ -52,11 +52,6 @@ footer p {
     color: #fff;
 }
 
-a,
-.btn-link {
-    color: #1ab394
-}
-
 .btn {
     cursor: pointer;
 }
@@ -104,12 +99,3 @@ a,
 
 
 /********** Edited By Sanjay ************/
-
-header .navbar {
-    padding: 0px 0px
-}
-
-.nav-link,
-.navbar-expand-lg .navbar-nav .nav-link {
-    padding: 15px
-}

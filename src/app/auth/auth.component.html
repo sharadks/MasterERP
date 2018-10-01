@@ -20,23 +20,28 @@
             <div class="card-header">
                 <h5 class="white-text">Brij ERP Login</h5>
             </div>
-            <div class="card-block">
+            <div class="card-body">
                 <list-errors [errors]="errors"></list-errors>
                 <form class="m-t" role="form" [formGroup]="authForm" (ngSubmit)="submitForm()">
                     <fieldset [disabled]="isSubmitting">
                         <div class="form-group">
+
                             <div class="input-group">
-                                <span class="input-group-addon">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
                     <i class="fa fa-user" aria-hidden="true"></i>
                   </span>
+                                </div>
                                 <input formControlName="email" placeholder="Email" class="form-control" type="text" />
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="input-group">
-                                <span class="input-group-addon">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
                     <i class="fa fa-key" aria-hidden="true"></i>
                   </span>
+                                </div>
                                 <input formControlName="password" placeholder="Password" class="form-control" type="password" />
                             </div>
                         </div>
@@ -54,19 +59,25 @@
                                     <button class="btn btn-primary" type="button" *ngIf='showOtp==false' (click)="getOTP()">
                       Get OTP
                     </button>
+
+
                                     <button class="btn btn-primary" [disabled]="!authForm.valid" type="submit" *ngIf='showOtp==true'>
                       {{ title }}
                     </button>
                                 </div>
                                 <div class="col-md-6">
-                                    <!-- <a href="#" class="pull-right">Forgot password?</a> -->
+                                    <a class="text-danger text-right width-full display-block" onclick="loading();" href="/Forgot_Password/Forgot_Password">Forgot
+  Password?</a>
                                 </div>
+
+
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
                                 <hr>
-                                <!-- <p>Do not have an account? <a class="btn-sm btn-link btn-create" href="#">Create an account</a></p> -->
+                                <span class="width-full" style="font-size:12px;">Note: An OTP will be sent to your registered<br> mobile number and
+  Email ID</span>
                             </div>
                         </div>
 

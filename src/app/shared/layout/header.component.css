@@ -1,12 +1,104 @@
-#topbar.bg-dark{background:#2a3b4c!important;}
+#topbar.bg-dark {
+    background: #2a3b4c!important;
+}
+
 #topbar .navbar-header {
     width: 150px !important;
 }
-#topbar .navbar-header #logo{position:absolute; top:0px; left:27px; padding:0px;}
+
+#topbar .navbar-header #logo {
+    position: absolute;
+    top: 0px;
+    left: 27px;
+    padding: 0px;
+}
+
 .center-block {
     display: block;
     margin-right: auto;
     margin-left: auto;
 }
-.navbar-dark .navbar-nav .nav-link{color:#fff;}
-.navbar-nav > li > a {line-height:20px;}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+}
+
+.navbar-nav>li>a {
+    line-height: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    background: #fff;
+    color: #2a3b4c;
+}
+
+header .navbar {
+    padding: 0px 0px
+}
+
+.nav-link,
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding: 15px
+}
+
+.header-right-menu li a {
+    color: #fff;
+}
+
+.header-right-menu li {
+    margin-right: 30px
+}
+
+.header-right-menu li i {
+    font-size: 16px;
+}
+
+.header-right-menu li>a span.badge {
+    position: absolute;
+    top: -8px;
+    left: -10px;
+    padding: 3px 6px;
+    color: #ffffff;
+    border-radius: 100%;
+}
+
+.header-right-menu li#topbar-chat>a span.badge {
+    left: auto;
+    right: 60px;
+    top: 7px
+}
+
+.header-right-menu li a.dropdown-toggle::after {
+    display: none;
+}
+
+.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px solid;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+
+.page-title-breadcrumb .breadcrumb {
+    float: right;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 0;
+    background: transparent;
+    padding-top: 17px;
+    margin-left: 10px;
+}
+
+.page-title-breadcrumb .page-header .page-title {
+    font-size: 25px;
+    font-weight: 300;
+    display: inline-block;
+    padding-top: 5px;
+    margin: 0 0 0 135px
+}
