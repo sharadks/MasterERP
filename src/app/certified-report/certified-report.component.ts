@@ -21,8 +21,8 @@ private postObject: any;
 private portalFigures: any;
 private currentUser: any;
 private portalList: any;
-private toDate: any = {'year':null,'month':null,'day':null};
-private fromDate : any = {'year':null,'month':null,'day':null};
+private toDate: any;
+private fromDate :any;
 private portalId : any;
 
   constructor(private reportService: ReportService, private jwtService: JwtService, private calendar: NgbCalendar) {
@@ -49,13 +49,7 @@ private portalId : any;
         var url = environment.get_date_filter+this.currentUser.userId;
         this.reportService.getDateFilters(url).subscribe(
           data => {
-              this.toDate.year = Number((data.to_date.split(' ')[0]).split('/')[2]);
-              this.toDate.month = Number((data.to_date.split(' ')[0]).split('/')[1]);
-              this.toDate.day = Number((data.to_date.split(' ')[0]).split('/')[0]);              
-              this.fromDate.year = Number((data.from_date.split(' ')[0]).split('/')[2]);
-              this.fromDate.month = Number((data.from_date.split(' ')[0]).split('/')[1]);
-              this.fromDate.day = Number((data.from_date.split(' ')[0]).split('/')[0]);
-              console.log("------------------",this.fromDate,  this.toDate );
+            
           },
           err => {
             //this.errors = err;
@@ -72,27 +66,7 @@ private portalId : any;
     this.reportService.getPortalList(url).subscribe(
         data => {
           this.portalList = data;
-          var url = environment.get_dashboard_figure +this.currentUser.userId+'&portal_id=0';
-          this.reportService.getPortalFigures(url).subscribe(
-            data => {
-                this.portalFigures = data;
-
-        this.postObject = 
-        { 
-        Draw : "1", "Start" : "1", "Length" : "100",
-        Search : { "Value" : "", "Regex" : "" },
-        Order : [{"Column" : "0", "Dir" : "asc"}, {"Column" : "1", "Dir" : ""}, {"Column" : "2", "Dir" : ""}],
-        Columns : [
-          { "Data" : "", "Name" : "", "Searchable" : "true", "Orderable" : "false"},
-          { "Data" : this.currentUser.userId, "Name" : "user_id", "Searchable" : "true", "Orderable" : "false"},
-          { "Data" : this.portalId, "Name" : "portal_id", "Searchable" : "true", "Orderable" : "false"}
-        ]
-        }
-            },
-            err => {
-              //this.errors = err;
-            }
-          );
+          this.getInitialFigures();
         },
         err => {
           //this.errors = err;
@@ -155,27 +129,41 @@ private portalId : any;
           );
     }
 
-    updateDateFrom(value){
-        console.log("=================", value);
-        var DateObject = { user_id: this.currentUser.userId, from_date: "15/09/2018", to_date: "15/10/2018"}
+    updateDate(fromValue,toValue){
+        var date1 = fromValue.day+'/'+fromValue.month+'/'+ fromValue.year;
+        var date2 = toValue.day+'/'+toValue.month+'/'+ toValue.year;
+
+        var DateObject = { user_id: this.currentUser.userId, from_date: date1, to_date: date2}
         this.reportService.updateDateFilters(environment.update_date_filter, DateObject).subscribe(
           data => {
-              
+            this.getInitialFigures();
           },
           err => {
             //this.errors = err;
           }
         );
     }
-    updateDateTo(value){
-      console.log("=================", value);
-      var DateObject = { user_id: this.currentUser.userId, from_date: "15/09/2018", to_date: "15/10/2018"}
-      this.reportService.updateDateFilters(environment.update_date_filter, DateObject).subscribe(
-        data => {
-        },
-        err => {
-          //this.errors = err;
-        }
-      );
-  }
+
+    getInitialFigures() {
+                 var url = environment.get_dashboard_figure +this.currentUser.userId+'&portal_id=0';
+                 this.reportService.getPortalFigures(url).subscribe(
+                   data => {
+                       this.portalFigures = data;
+               this.postObject = 
+               { 
+               Draw : "1", "Start" : "1", "Length" : "100",
+               Search : { "Value" : "", "Regex" : "" },
+               Order : [{"Column" : "0", "Dir" : "asc"}, {"Column" : "1", "Dir" : ""}, {"Column" : "2", "Dir" : ""}],
+               Columns : [
+                 { "Data" : "", "Name" : "", "Searchable" : "true", "Orderable" : "false"},
+                 { "Data" : this.currentUser.userId, "Name" : "user_id", "Searchable" : "true", "Orderable" : "false"},
+                 { "Data" : this.portalId, "Name" : "portal_id", "Searchable" : "true", "Orderable" : "false"}
+               ]
+               }
+                   },
+                   err => {
+                     //this.errors = err;
+                   }
+                 );
+    }
 }

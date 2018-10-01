@@ -52,6 +52,11 @@ footer p {
     color: #fff;
 }
 
+a,
+.btn-link {
+    color: #1ab394
+}
+
 .btn {
     cursor: pointer;
 }
@@ -99,3 +104,12 @@ footer p {
 
 
 /********** Edited By Sanjay ************/
+
+header .navbar {
+    padding: 0px 0px
+}
+
+.nav-link,
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding: 15px
+}

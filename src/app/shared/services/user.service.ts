@@ -25,7 +25,11 @@ export class UserService {
     private http: Http,
     private jwtService: JwtService
   ) {
-    this.isAuthenticatedSubject.next(false);
+    if(this.jwtService.getToken()!= undefined) {
+      this.isAuthenticatedSubject.next(true);
+    } else{
+      this.isAuthenticatedSubject.next(false);
+    }
   }
 
   // Verify JWT in localstorage with server & load user's info.
