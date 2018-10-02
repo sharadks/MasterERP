@@ -27,6 +27,10 @@ export class HeaderComponent implements OnInit {
         )
     }
 
+     getUserName(): string {
+        return localStorage.getItem('userName');
+    }
+
     logout() {
         this.userService.purgeAuth();
         this.router.navigateByUrl('/');
