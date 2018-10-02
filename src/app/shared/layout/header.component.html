@@ -251,9 +251,11 @@
                 <div class="page-title">Dashboard</div>
             </div>
             <ol class="breadcrumb page-breadcrumb">
-                <li>
+                <!-- <li>
                     <i class="fa fa-home"></i>&nbsp;<a  routerLink="/" routerLinkActive="active">Home</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;
-                </li>
+                </li> -->
+                <li ><a routerLink="/" routerLinkActive="active">Home</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
+
                 <li *showAuthed=true ><a routerLink="/certified-report" routerLinkActive="active">Dashboard</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
                 <li *showAuthed=false ><a routerLink="/login" routerLinkActive="active">Sign In</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
                 <li *showAuthed=true ><a routerLink="/logout" routerLinkActive="active">Log Out</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
