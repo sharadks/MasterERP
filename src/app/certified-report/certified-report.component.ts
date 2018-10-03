@@ -51,7 +51,8 @@ private graphColors:any;
               var url = environment.get_date_filter+this.currentUser.userId;
               this.reportService.getDateFilters(url).subscribe(
                 data => {
-                  this.getGraphData(environment.get_graph_data);
+                  var url=environment.get_graph_data+this.currentUser.userId;
+                  this.getGraphData(url);
                 },
                 err => {
                   
