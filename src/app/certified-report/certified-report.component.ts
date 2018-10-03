@@ -4,6 +4,7 @@ import { environment } from '../../environments/environment';
 import * as enLocale from 'date-fns/locale/en';
 import * as frLocale from 'date-fns/locale/fr';
 import {NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-certified-report',
@@ -25,7 +26,7 @@ private toDate: any;
 private fromDate :any;
 private portalId : any;
 
-  constructor(private reportService: ReportService, private jwtService: JwtService, private calendar: NgbCalendar) {
+  constructor(private reportService: ReportService, private jwtService: JwtService, private calendar: NgbCalendar, private router:Router) {
   this.pieColors = ['#3366CC', '#DC3912', '#FF9900', '#109618', '#990099',
 '#3B3EAC', '#0099C6', '#DD4477', '#66AA00', '#B82E2E',
 '#316395', '#994499', '#22AA99', '#AAAA11', '#6633CC',
@@ -46,6 +47,24 @@ private portalId : any;
 
         }
         this.currentUser = this.jwtService.getCurrentUser();
+          var authData = {
+          'userId':this.currentUser.userId,
+          'token':this.currentUser.token
+          };
+          
+          this.reportService.authenticateUser(environment.check_auth, authData).subscribe(
+            data => {
+            },
+            err => {
+              window.localStorage.clear();
+              this.router.navigateByUrl('/login'); 
+              //this.errors = err;
+            }
+          );
+
+
+
+
         var url = environment.get_date_filter+this.currentUser.userId;
         this.reportService.getDateFilters(url).subscribe(
           data => {
@@ -56,8 +75,8 @@ private portalId : any;
           }
         );
 
-
-   }
+          
+      }
 
   ngOnInit() {
     this.currentUser = this.jwtService.getCurrentUser();

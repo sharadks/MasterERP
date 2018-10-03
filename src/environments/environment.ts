@@ -31,6 +31,7 @@ export const environment = {
     delayed_order:'/api/DealerReports/GetDashboardPortalTotalOrderDelay',
     total_order_pending:'/api/DealerReports/GetDashboardPortalTotalOrderPending',
     cancel_order:'/api/DealerReports/GetDashboardPortalTotalOrderCancel',
+    check_auth:'/api/Account/checkAuth',
     login_auth_path: '/users/user.json'
 };
 
