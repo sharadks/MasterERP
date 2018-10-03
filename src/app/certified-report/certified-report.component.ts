@@ -25,27 +25,20 @@ private portalList: any;
 private toDate: any;
 private fromDate :any;
 private portalId : any;
+private isLoggedIn:boolean= false;
+private graphData:any;
+private DEFAULT_COLORS:any;
+private graphColors:any;
 
   constructor(private reportService: ReportService, private jwtService: JwtService, private calendar: NgbCalendar, private router:Router) {
-  this.pieColors = ['#3366CC', '#DC3912', '#FF9900', '#109618', '#990099',
-'#3B3EAC', '#0099C6', '#DD4477', '#66AA00', '#B82E2E',
-'#316395', '#994499', '#22AA99', '#AAAA11', '#6633CC',
-'#E67300', '#8B0707', '#329262', '#5574A6', '#3B3EAC'];
-		this.data = {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-            datasets: [
-                {
-                    label: 'First Dataset',
-                    data: [65, 59, 80, 81, 56, 55, 40]
-                },
-                {
-                    label: 'Second Dataset',
-                    data: [28, 48, 40, 19, 86, 27, 90]
-                }
-            ],
-             backgroundColor: this.pieColors,
+    this. DEFAULT_COLORS = ['#3366CC', '#DC3912', '#FF9900', '#109618', '#990099',
+    '#3B3EAC', '#0099C6', '#DD4477', '#66AA00', '#B82E2E',
+    '#316395', '#994499', '#22AA99', '#AAAA11', '#6633CC',
+    '#E67300', '#8B0707', '#329262', '#5574A6', '#3B3EAC'];
 
-        }
+
+
+    
         this.currentUser = this.jwtService.getCurrentUser();
           var authData = {
           'userId':this.currentUser.userId,
@@ -54,28 +47,23 @@ private portalId : any;
           
           this.reportService.authenticateUser(environment.check_auth, authData).subscribe(
             data => {
+              this.isLoggedIn= true;
+              var url = environment.get_date_filter+this.currentUser.userId;
+              this.reportService.getDateFilters(url).subscribe(
+                data => {
+                  this.getGraphData(environment.get_graph_data);
+                },
+                err => {
+                  
+                }
+              );
             },
             err => {
+              this.isLoggedIn= false;
               window.localStorage.clear();
               this.router.navigateByUrl('/login'); 
-              //this.errors = err;
             }
-          );
-
-
-
-
-        var url = environment.get_date_filter+this.currentUser.userId;
-        this.reportService.getDateFilters(url).subscribe(
-          data => {
-            
-          },
-          err => {
-            //this.errors = err;
-          }
-        );
-
-          
+          );  
       }
 
   ngOnInit() {
@@ -113,6 +101,31 @@ private portalId : any;
       );
 
   }
+
+
+  getGraphData(url) {
+    this.reportService.getGraphData(url).subscribe(
+        data => {
+        this.graphData = data;
+          this.graphColors = this.configureDefaultColours(this.graphData.datasets);
+          for(var i=0;i<this.graphData.datasets.length;i++) {
+            this.graphData.datasets[i].backgroundColor = this.graphColors[i];
+          }
+        },
+        err => { 
+        }
+      );
+  }
+
+ configureDefaultColours(data: number[]): string[] {
+    let customColours = []
+    if (data.length) {
+    customColours = data.map((element, idx) => {
+        return this.DEFAULT_COLORS[idx % this.DEFAULT_COLORS.length];
+    });
+    }
+    return customColours;
+}
 
   getGridData(path){
     this.postObject.Columns[2].Data=this.portalId;

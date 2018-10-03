@@ -7,7 +7,7 @@ import { SharedModule } from '../shared';
 const authRouting: ModuleWithProviders = RouterModule.forChild([
   {
     path: 'login',
-    component: AuthComponent,
+    component: AuthComponent
     //canActivate: [NoAuthGuard]
   }
 ]);

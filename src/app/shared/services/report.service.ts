@@ -47,7 +47,12 @@ export class ReportService {
             }
         );
     };
-
+    
+    getGraphData(url): Observable<any> {
+        return this.apiService.get(url)
+            .map((data) => data);
+    };
+    
     getSlaCompliance(url, date): Observable<any> {
         return this.apiService.get(url + '?date=' + date)
             .map((data) => data);

@@ -21,7 +21,11 @@
                 <h5 class="white-text">Brij ERP Login</h5>
             </div>
             <div class="card-body">
-                <list-errors [errors]="errors"></list-errors>
+                <div *ngIf='errors' style="color: red">
+                        {{errors}}
+                </div>
+               
+                <!-- <list-errors [errors]="errors"></list-errors> -->
                 <form class="m-t" role="form" [formGroup]="authForm" (ngSubmit)="submitForm()">
                     <fieldset [disabled]="isSubmitting">
                         <div class="form-group">

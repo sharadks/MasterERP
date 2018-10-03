@@ -13,7 +13,7 @@ import { Errors, UserService } from '../shared';
 export class AuthComponent implements OnInit {
   authType: String = '';
   title: String = '';
-  errors: Errors = new Errors();
+  errors: any;
   isSubmitting = false;
   authForm: FormGroup;
   showOtp: Boolean = false;
@@ -47,13 +47,14 @@ export class AuthComponent implements OnInit {
 
 
   getOTP() {
-    this.errors = new Errors();
+    this.errors='';
     const credentials = this.authForm.value;
     this.userService.getOTP({'login_id': credentials.email,'password':credentials.password}).subscribe(
       data => {
         if(data.valid == true) {
           this.showOtp = true;
         }else {
+          this.errors = data.msg;
           this.showOtp = false;
         }
       },
@@ -66,8 +67,8 @@ export class AuthComponent implements OnInit {
 
 
   submitForm() {
+    this.errors='';
     this.isSubmitting = true;
-    this.errors = new Errors();
     const credentials = this.authForm.value;
     this.userService
     .attemptAuth(this.authType, {'grant_type ': 'password','username': credentials.email,'password': credentials.otp})
@@ -77,7 +78,7 @@ export class AuthComponent implements OnInit {
         this.router.navigateByUrl('/certified-report')   
       },
       err => {
-        this.errors = err;
+        this.errors = err.error_description;
         this.isSubmitting = false;
       }
     );

@@ -11,7 +11,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 const certifiedReportRouting: ModuleWithProviders = RouterModule.forChild([
     {
         path: 'certified-report',
-        component: CertifiedReportComponent
+        component: CertifiedReportComponent,
+       // canActivate: [AuthGuard]
     }
 ]);
 

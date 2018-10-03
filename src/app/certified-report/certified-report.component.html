@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div *ngIf ="isLoggedIn" class="container-fluid">
     <div class="row">
         <div class="col-sm-1">
             <label class="pull-right">Filters:</label>
@@ -134,11 +134,11 @@
             </p-dataTable>
         </div>
     </div>
-    <!-- <div class="row">
+    <div class="row">
      <div class="col-sm-6">
          <p>
-             <p-chart type="line" [data]="data"></p-chart>
+             <p-chart type="line" [data]="graphData"></p-chart>
              </p>
      </div>
-     </div> -->
+     </div>
 </div>

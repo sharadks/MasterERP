@@ -98,4 +98,13 @@ export class UserService {
     });
   }
 
+  authenticateUser(url, data): Observable<any> {
+    return this.apiService.post(url, data)
+        .map(
+        data => {
+            return true;
+        }
+    );
+};
+
 }
