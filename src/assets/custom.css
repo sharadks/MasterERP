@@ -18,12 +18,8 @@ header {
 footer {
     background: #fff;
     border-top: 1px solid #e7eaec;
-    bottom: 0;
-    left: 0;
     padding: 10px 20px;
-    position: absolute;
-    right: 0;
-    z-index: 100;
+    margin-top: 20px;
 }
 
 footer p {
@@ -41,11 +37,11 @@ footer p {
 }
 
 .card.custome-panel {
-    border-color: #1ab394
+    border-color: #000
 }
 
 .card.custome-panel>.card-header {
-    background: #1ab394;
+    background: #000;
 }
 
 .card.custome-panel h5 {
@@ -62,8 +58,8 @@ a,
 }
 
 .btn-primary {
-    background: #1ab394;
-    border-color: #19a588;
+    background: #E4312A;
+    border-color: #cd1a13;
 }
 
 .btn-primary.disabled,
@@ -77,8 +73,8 @@ a,
 .btn-primary:hover,
 .btn-primary:active,
 .show>.btn-primary.dropdown-toggle {
-    background: #0d9277;
-    border-color: #0b866c
+    background: #cd1a13;
+    border-color: #cd1a13
 }
 
 .btn-secondary {
@@ -93,10 +89,12 @@ a,
     padding: 0 30px;
 }
 
-.nav-link.active {
+
+/***.nav-link.active {
     background: #1ab394;
     color: #fff;
 }
+***/
 
 .navbar-toggleable-md .navbar-nav .nav-link {
     padding: 0.5rem 0.8rem
@@ -112,4 +110,16 @@ header .navbar {
 .nav-link,
 .navbar-expand-lg .navbar-nav .nav-link {
     padding: 15px
+}
+
+.card-footer .pagination {
+    margin-bottom: 0px;
+}
+
+.card-header {
+    font-size: 20px;
+}
+
+.main-footer {
+    position: relative
 }
