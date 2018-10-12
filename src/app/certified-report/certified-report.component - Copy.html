@@ -1,13 +1,8 @@
-<div *ngIf ="isLoggedIn" class="container-fluid certified-report">
-<div class="row">
-<div class="col">
-	 <div class="card">
-                <div class="card-header">Certified Reports </div>
-                <div class="card-body">
-				
-    <div class="row filter-sec">
+<div *ngIf ="isLoggedIn" class="container-fluid">
+    <div class="row">
+
         <div class="col-sm-1">
-            <label class="pull-right">Filter</label>
+            <label class="pull-right">Filters:</label>
         </div>
         <div class="col-sm-3">
             <div class="row">
@@ -53,8 +48,8 @@
            </option>
         </select>
         </div>
-
-	</div>
+    </div>
+	
  <div class="row" *ngIf='portalFigures'>
  <div class="col">
  <div class="top-tiles">
@@ -114,73 +109,91 @@
  </ul>
         
 		</div>
-		<hr>
-		<div class="top-tiles">
- <ul>
- <li>
-  <div class="card-counter">
-                <span class="count-name"><i class="fa fa-user" aria-hidden="true"></i> Total Order Qty</span>
-                <span class="count-numbers">{{portalFigures.total_protal}}</span>                
-				<span class="count-link" (click)='getGridData("get_total_portal")'>View All</span>
-            </div>
-			</li>
-			<li>
-			 <div class="card-counter">
-                <span class="count-name"><i class="fa fa-user" aria-hidden="true"></i> Total Order Amount</span>
-                <span class="count-numbers">{{portalFigures.total_dealers}}</span>                
-				<span class="count-link" (click)='getGridData("get_total_dealer")'>View All</span>
-				
-            </div>
-			</li>
-			<li>
-			<div class="card-counter">
-               <span class="count-name"><i class="fa fa-user" aria-hidden="true"></i>Total order dispatch</span>
-                <span class="count-numbers">{{portalFigures.total_emp}}</span>
-                <span class="count-link" (click)='getGridData("get_total_portal")'>View All</span>
-            </div>
-			</li>
-			<li>
-			<div class="card-counter">
-               <span class="count-name"><i class="fa fa-user" aria-hidden="true"></i>Orde Dispatch on Time</span>
-                <span class="count-numbers">{{portalFigures.total_emp}}</span>
-                <span class="count-link" (click)='getGridData("get_total_portal")'>View All</span>
-            </div>
-			</li>
-			<li>
-			<div class="card-counter">
-			<span class="count-name"><i class="fa fa-user" aria-hidden="true"></i>Delay Orders</span>
-                <span class="count-numbers">{{portalFigures.order_place_by_dealers}}</span>
-                <span class="count-link" (click)='getGridData("get_order_by_dealer")'>View All</span>
-               
-            </div>
-			</li>
-			<li>
-			  <div class="card-counter">
-              <span class="count-name"><i class="fa fa-user" aria-hidden="true"></i>Total order Pending</span>
-                <span class="count-numbers">{{portalFigures.total_order_received_by_emp}}</span>
-                <span class="count-link" (click)='getGridData("total_order_recived_by_emp")'>View All</span>
-            </div>
-			</li>
-			<li>
-			<div class="card-counter">
-                <span class="count-name"><i class="fa fa-user" aria-hidden="true"></i>Cancel Orders</span>
-                <span class="count-numbers">{{portalFigures.order_place_by_emp}}</span>
-                <span class="count-link" (click)='getGridData("get_total_portal")'>View All</span>
-            </div>
-			</li>			
- </ul>
-        
-		</div>
     </div>
 	</div>
-	</div>
-</div>
-
-<div class="card" *ngIf="tableData">
-                <div class="card-header">Portal Result </div>
-                <div class="card-body">
-    <div class="row" style="margin: 20px 0px" >
+    <div class="card card-block bg-faded row" style="margin: 20px" *ngIf='portalFigures'>
+        <div class="col-sm-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Total Portals</th>
+                        <th>Total Dealers</th>
+                        <th>Total Employees</th>
+                        <th>Order place by Dealers</th>
+                        <th>Order Place by Employees</th>
+                        <th>Total Orders Received by Dealer</th>
+                        <th>Total Orders Received by Employees</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td (click)='getGridData("get_total_portal")'>{{portalFigures.total_protal}}</td>
+                        <td (click)='getGridData("get_total_dealer")'>{{portalFigures.total_dealers}}</td>
+                        <td (click)='getGridData("get_total_emp")'>{{portalFigures.total_emp}}</td>
+                        <td (click)='getGridData("get_order_by_dealer")'>{{portalFigures.order_place_by_dealers}}</td>
+                        <td (click)='getGridData("get_order_by_emp")'>{{portalFigures.order_place_by_emp}}</td>
+                        <td (click)='getGridData("total_order_recived_by_dealer")'>{{portalFigures.total_order_received_by_dealer}}</td>
+                        <td (click)='getGridData("total_order_recived_by_emp")'>{{portalFigures.total_order_received_by_emp}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="card card-block bg-faded row" style="margin: 20px">
+        <div class="col-sm-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Total Order Qty</th>
+                        <th>Total Order Amount</th>
+                        <th>Total order dispatch</th>
+                        <th>Orde Dispatch on Time</th>
+                        <th>Delay Orders</th>
+                        <th>Total order Pending</th>
+                        <th>Cancel Orders</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td (click)='getGridData("total_order_qnty")'>{{portalFigures.total_order_qty}}</td>
+                        <td (click)='getGridData("total_order_amount")'>{{portalFigures.total_order_amt}}</td>
+                        <td (click)='getGridData("total_order_dispatch")'>{{portalFigures.total_order_dispatch}}</td>
+                        <td (click)='getGridData("order_dispatch_ontime")'>{{portalFigures.order_dispatch_on_time}}</td>
+                        <td (click)='getGridData("delayed_order")'>{{portalFigures.delary_orders}}</td>
+                        <td (click)='getGridData("total_order_pending")'>{{portalFigures.total_order_pending}}</td>
+                        <td (click)='getGridData("cancel_order")'>{{portalFigures.cancel_order}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- <div class="row" >
+     <div class="col-sm-6">
+             <div class="row">
+                     <div class="col-sm-3"> 
+                             <label class="pull-right">Search:</label>  
+                         </div>
+                         <div class="col-sm-3">  
+                                 <input type="text" name="search" id="search" [(ngModel)]="searchedValue" class="form-control" (blur)="doSearch(searchedValue)" >
+                             </div>
+                             <div class="col-sm-3">  
+                                     <input type="button"  class='btn btn-primary pull-right'  value='Search' (click)="doSearch(searchedValue)">
+                                 </div>
+                                 <div class="col-sm-3">  
+                                         <input type="button"  class='btn btn-primary pull-left'  value='Reset' (click)="doSearch('')">
+                                     </div>
+             </div>
+     </div>
+     <div class="col-sm-6">
+     </div>
+     </div> -->
+    <div class="row" style="margin: 20px" *ngIf="tableData">
        
+			<div class="col">
+	 <div class="card">
+                <div class="card-header">Panel Heading</div>
+                <div class="card-body">
+				<div class="row">
 				<div class="col">
 				<div class="table-responsive">
             <p-dataTable [value]="tableData" [tableStyle]="{'text-align':'center'}" scrollable="true" scrollHeight="350px" [resizableColumns]="true" [paginator]="true" [rows]="10" [pageLinks]="6" [rowsPerPageOptions]='[5,10,15]'>
@@ -191,14 +204,11 @@
             </p-dataTable>
 			</div>
 			</div>
-        
-	
+        </div>
+		</div>
+		</div>
+		</div>
     </div>
-	</div>
-	</div>
-	 <div class="card">
-                <div class="card-header">Portal Figure </div>
-                <div class="card-body">
     <div class="row">
      <div class="col-sm-6">
          <p>
@@ -206,7 +216,4 @@
              </p>
      </div>
      </div>
-	 </div>
-	 </div>
-	 </div>
 </div>

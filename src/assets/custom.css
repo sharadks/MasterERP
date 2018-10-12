@@ -1,17 +1,18 @@
 /************** Custome CSS Define by sanjay ****************/
 
 body {
-    background: #fff;
+    background: #f1f4f6;
     font-size: 13px;
     margin: 0px;
     font-family: 'Open Sans', sans-serif;
 }
+.form-control{font-size:13px;}
 
 header {
     background: #fff;
     float: left;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     box-shadow: 0 0px 24px 0 rgba(0, 0, 0, 0.06), 0 1px 0px 0 rgba(0, 0, 0, 0.02);
 }
 
@@ -117,9 +118,11 @@ header .navbar {
 }
 
 .card-header {
-    font-size: 20px;
+    font-size: 16px;
+	padding:10px;
 }
 
 .main-footer {
     position: relative
 }
+
