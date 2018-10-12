@@ -24,6 +24,7 @@ export class AuthComponent implements OnInit {
     private userService: UserService,
     private fb: FormBuilder
   ) {
+    window.localStorage.clear();
     // use FormBuilder to create a form group
     this.authForm = this.fb.group({
       'email': ['', Validators.required],
