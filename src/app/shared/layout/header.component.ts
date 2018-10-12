@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-
 import {User} from '../models';
 import {UserService} from '../services';
 import {Router} from '@angular/router';
@@ -12,10 +11,14 @@ import {Router} from '@angular/router';
 })
 
 export class HeaderComponent implements OnInit {
-    currentUser: User;
+    currentUser: any;
+    isLoggedIn: boolean = false;
+
 
     constructor(private userService: UserService,
                 private router: Router) {
+
+
     }
 
 

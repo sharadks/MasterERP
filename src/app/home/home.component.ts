@@ -19,7 +19,6 @@ export class HomeComponent implements OnInit {
     private reportService: ReportService, 
     private jwtService: JwtService
   ) {
-
     this.currentUser = this.jwtService.getCurrentUser();
           var authData = {
           'userId':this.currentUser.userId,
@@ -28,7 +27,7 @@ export class HomeComponent implements OnInit {
 
     this.reportService.authenticateUser(environment.check_auth, authData).subscribe(
       data => {
-        this.isLoggedIn= true;
+        this.isLoggedIn= true; 
       },
       err => {
         this.isLoggedIn= false;
