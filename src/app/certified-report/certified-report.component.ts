@@ -86,9 +86,7 @@ private graphColors:any;
     this.postObject.Search.Value = value;
     this.reportService.getReportData(environment.report_path,this.postObject).subscribe(
         data => {
-         console.log("Report Data", data);
          this.tableData = data.data;
-         console.log(this.tableData);
          if(this.tableData.length) {
             this.colValues = Object.keys(this.tableData[0]);
             for(let i=0;i<this.colValues.length;i++){
@@ -130,14 +128,12 @@ private graphColors:any;
 
   getGridData(path){
     this.postObject.Columns[2].Data=this.portalId;
-    console.log(this.postObject);
     this.reportService.getGridData(environment[path],this.postObject).subscribe(
         data => {
             this.tableData = null;
             this.colValues = null;
             this.cols = [];
             this.tableData = data.data;
-         console.log(this.tableData);
          this.colValues = Object.keys(this.tableData[0]);
          for(let i=0;i<this.colValues.length;i++){
              this.cols.push({field: this.colValues[i], header: this.colValues[i]})
@@ -178,7 +174,7 @@ private graphColors:any;
     }
 
     getInitialFigures() {
-                 var url = environment.get_dashboard_figure +this.currentUser.userId+'&portal_id=0';
+                 var url = environment.get_dashboard_figure +this.currentUser.userId+'&portal_id='+this.portalId;
                  this.reportService.getPortalFigures(url).subscribe(
                    data => {
                        this.portalFigures = data;
