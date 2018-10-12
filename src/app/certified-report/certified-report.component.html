@@ -120,52 +120,52 @@
  <li>
   <div class="card-counter">
                 <span class="count-name"><i class="fa fa-user" aria-hidden="true"></i> Total Order Qty</span>
-                <span class="count-numbers">{{portalFigures.total_protal}}</span>                
-				<span class="count-link" (click)='getGridData("get_total_portal")'>View All</span>
+                <span class="count-numbers">{{portalFigures.total_order_qty}}</span>                
+				<span class="count-link" (click)='getGridData("total_order_qnty")'>View All</span>
             </div>
 			</li>
 			<li>
 			 <div class="card-counter">
                 <span class="count-name"><i class="fa fa-user" aria-hidden="true"></i> Total Order Amount</span>
-                <span class="count-numbers">{{portalFigures.total_dealers}}</span>                
-				<span class="count-link" (click)='getGridData("get_total_dealer")'>View All</span>
+                <span class="count-numbers">{{portalFigures.total_order_amt}}</span>                
+				<span class="count-link" (click)='getGridData("total_order_amount")'>View All</span>
 				
             </div>
 			</li>
 			<li>
 			<div class="card-counter">
                <span class="count-name"><i class="fa fa-user" aria-hidden="true"></i>Total order dispatch</span>
-                <span class="count-numbers">{{portalFigures.total_emp}}</span>
-                <span class="count-link" (click)='getGridData("get_total_portal")'>View All</span>
+                <span class="count-numbers">{{portalFigures.total_order_dispatch}}</span>
+                <span class="count-link" (click)='getGridData("total_order_dispatch")'>View All</span>
             </div>
 			</li>
 			<li>
 			<div class="card-counter">
                <span class="count-name"><i class="fa fa-user" aria-hidden="true"></i>Orde Dispatch on Time</span>
-                <span class="count-numbers">{{portalFigures.total_emp}}</span>
-                <span class="count-link" (click)='getGridData("get_total_portal")'>View All</span>
+                <span class="count-numbers">{{portalFigures.order_dispatch_on_time}}</span>
+                <span class="count-link" (click)='getGridData("order_dispatch_ontime")'>View All</span>
             </div>
 			</li>
 			<li>
 			<div class="card-counter">
 			<span class="count-name"><i class="fa fa-user" aria-hidden="true"></i>Delay Orders</span>
-                <span class="count-numbers">{{portalFigures.order_place_by_dealers}}</span>
-                <span class="count-link" (click)='getGridData("get_order_by_dealer")'>View All</span>
+                <span class="count-numbers">{{portalFigures.delary_orders}}</span>
+                <span class="count-link" (click)='getGridData("delayed_order")'>View All</span>
                
             </div>
 			</li>
 			<li>
 			  <div class="card-counter">
               <span class="count-name"><i class="fa fa-user" aria-hidden="true"></i>Total order Pending</span>
-                <span class="count-numbers">{{portalFigures.total_order_received_by_emp}}</span>
-                <span class="count-link" (click)='getGridData("total_order_recived_by_emp")'>View All</span>
+                <span class="count-numbers">{{portalFigures.total_order_pending}}</span>
+                <span class="count-link" (click)='getGridData("total_order_pending")'>View All</span>
             </div>
 			</li>
 			<li>
 			<div class="card-counter">
                 <span class="count-name"><i class="fa fa-user" aria-hidden="true"></i>Cancel Orders</span>
-                <span class="count-numbers">{{portalFigures.order_place_by_emp}}</span>
-                <span class="count-link" (click)='getGridData("get_total_portal")'>View All</span>
+                <span class="count-numbers">{{portalFigures.cancel_order}}</span>
+                <span class="count-link" (click)='getGridData("cancel_order")'>View All</span>
             </div>
 			</li>			
  </ul>
@@ -179,7 +179,7 @@
 <div class="card" *ngIf="tableData">
                 <div class="card-header">Portal Result </div>
                 <div class="card-body">
-    <div class="row" style="margin: 20px 0px" >
+    <div class="row" style="margin-top: 20px" >
        
 				<div class="col">
 				<div class="table-responsive">

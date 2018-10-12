@@ -65,9 +65,9 @@ a,
 
 .btn-primary.disabled,
 .btn-primary:disabled {
-    background: #1ab394;
+    background: #cd1a13;
     opacity: 0.5;
-    border-color: #19a588;
+    border-color: #cd1a13;
 }
 
 .btn-primary.active,
