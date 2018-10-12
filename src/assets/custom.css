@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /************** Custome CSS Define by sanjay ****************/
 
 body {
@@ -129,4 +130,136 @@ header .navbar {
 
 
 .loading{position:fixed; top:0px; left:0px; width:100%; height:100%; background:#fff;}
+=======
+/************** Custome CSS Define by sanjay ****************/
+
+body {
+    background: #f1f4f6;
+    font-size: 13px;
+    margin: 0px;
+    font-family: 'Open Sans', sans-serif;
+}
+.form-control{font-size:13px;}
+
+header {
+    background: #fff;
+    float: left;
+    width: 100%;
+    margin-bottom: 0px;
+    box-shadow: 0 0px 24px 0 rgba(0, 0, 0, 0.06), 0 1px 0px 0 rgba(0, 0, 0, 0.02);
+}
+
+footer {
+    background: #fff;
+    border-top: 1px solid #e7eaec;
+    padding: 10px 20px;
+    margin-top: 20px;
+}
+
+footer p {
+    margin-bottom: 5px;
+}
+
+.home-page {
+    float: left;
+    width: 100%;
+}
+
+.navbar-toggleable-md .navbar-collapse.login-menu {
+    float: right;
+    width: auto
+}
+
+.card.custome-panel {
+    border-color: #000
+}
+
+.card.custome-panel>.card-header {
+    background: #000;
+}
+
+.card.custome-panel h5 {
+    color: #fff;
+}
+
+a,
+.btn-link {
+    color: #1ab394
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #E4312A;
+    border-color: #cd1a13;
+}
+
+.btn-primary.disabled,
+.btn-primary:disabled {
+    background: #cd1a13;
+    opacity: 0.5;
+    border-color: #cd1a13;
+}
+
+.btn-primary.active,
+.btn-primary:hover,
+.btn-primary:active,
+.show>.btn-primary.dropdown-toggle {
+    background: #cd1a13;
+    border-color: #cd1a13
+}
+
+.btn-secondary {
+    background: #f3efef
+}
+
+.login-menu li {
+    margin-left: 15px
+}
+
+.middle-box {
+    padding: 0 30px;
+}
+
+
+/***.nav-link.active {
+    background: #1ab394;
+    color: #fff;
+}
+***/
+
+.navbar-toggleable-md .navbar-nav .nav-link {
+    padding: 0.5rem 0.8rem
+}
+
+
+/********** Edited By Sanjay ************/
+
+header .navbar {
+    padding: 0px 0px
+}
+
+.nav-link,
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding: 15px
+}
+
+.card-footer .pagination {
+    margin-bottom: 0px;
+}
+
+.card-header {
+    font-size: 16px;
+	padding:10px;
+}
+
+.main-footer {
+    position: relative
+}
+
+
+.loading{position:fixed; top:0px; left:0px; width:100%; height:100%; background:#fff;}
+>>>>>>> aa64c9fbcb28142456e30c241b22038df874484f
 .loading img{position:absolute; top:35%; left:40%;}
