@@ -2,50 +2,101 @@
     cursor: pointer;
 }
 
-.card-counter {    
+.card-counter {
     margin: 0px 0px;
-    padding: 0px 0px;
+    padding: 15px 0px 0 0;
     background-color: #fff;
     transition: .3s linear all;
-	text-align:center;
-	border:1px #f9f1f1 solid;
+    text-align: center;
+    border: 1px #f9f1f1 solid;
+    min-height: 100px;
+    position: relative;
 }
 
+.card-counter:before {
+    border-top: 5px #0073b7 solid;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    content: "";
+}
+
+.card-counter:after {
+    border-top: 5px #444 solid;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    content: "";
+    transition: all 0.5s ease-in-out;
+}
+
+.card-counter:hover:after {
+    width: 100%
+}
 
 .card-counter i {
     font-size: 18px;
     opacity: 0.9;
-	margin-right:5px;
-	position:relative;
-	top:3px;
+    margin-right: 5px;
+    position: relative;
+    top: 3px;
+    display: none;
 }
 
-.card-counter .count-numbers {   
+.card-counter .count-numbers {
     font-size: 24px;
     display: block;
-	font-weight:bold;
-	color:#0073b7;
-	line-height:26px;
+    font-weight: bold;
+    color: #0073b7;
+    line-height: 26px;
 }
 
 .card-counter .count-name {
-    font-style: italic;
     text-transform: capitalize;
-    opacity: 0.9;
     display: block;
     font-size: 14px;
-	line-height:16px;
-	min-height:42px;
-	margin-bottom:7px;
-	padding:0 5px;
-	padding-top:6px;
-	
+    line-height: 18px;
+    margin-bottom: 7px;
+    padding: 0 5px;
+    padding-top: 6px;
+    min-height: 38px;
 }
-.card-counter .count-link{border-top:#dcdcdc; border-bottom:1px #dcdcdc; font-size:11px; margin-top:8px; padding:4px 5px; display:inline-block; vertical-align:top; width:100%; cursor:pointer; background:#444; color:#fff; transition:all 0.3s ease-in-out;}
-.card-counter .count-link:hover{background:#e32b24;}
-.top-tiles ul{list-style:none; display:table; padding:0px; margin:0px 0px; width:100%}
-.top-tiles li{display:table-cell;position:relative; vertical-align:top; width:calc(100%/7); padding:0 5px;}
-.certified-report .card{margin-bottom:15px;}
-.certified-report .card .card-body{padding:0px 15px 15px;}
 
-.filter-sec{background:#f0f3f5; padding:15px 0px 10px 0; margin-bottom:15px}
+.card-counter:hover {
+    cursor: pointer;
+}
+
+.top-tiles ul {
+    list-style: none;
+    display: table;
+    padding: 0px;
+    margin: 0px 0px;
+    width: 100%
+}
+
+.top-tiles li {
+    display: table-cell;
+    position: relative;
+    vertical-align: top;
+    width: calc(100%/7);
+    padding: 0 5px;
+}
+
+.certified-report .card {
+    margin-bottom: 15px;
+}
+
+.certified-report .card .card-body {
+    padding: 0px 15px 15px;
+}
+
+.filter-sec {
+    background: #f0f3f5;
+    padding: 15px 0px 10px 0;
+    margin-bottom: 15px
+}
+
+
+/******************* Faltu *************/
