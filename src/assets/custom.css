@@ -150,3 +150,25 @@ header .navbar {
     top: 35%;
     left: 40%;
 }
+
+.sub-nav {
+    display: inline-block;
+    margin-left: 100px;
+    background: #eff2f3;
+}
+
+.sub-nav li {
+    display: inline-block;
+    border-right: 1px #fff solid;
+}
+
+.sub-nav li a {
+    display: inline-block;
+    color: #000;
+    transition: all 0.3s ease-in-out;
+}
+
+.sub-nav li a:hover {
+    background: #2a3b4c;
+    color: #fff;
+}
