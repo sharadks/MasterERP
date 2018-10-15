@@ -1,4 +1,38 @@
 <div *ngIf="isLoggedIn" class="container-fluid certified-report">
+        <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
+                <div class="container-fluid">
+                    <div class="page-header pull-left">
+                        <div class="page-title">Online Dashboard Portal</div>
+                    </div>
+        
+                    <ul class="navbar-nav sub-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Menu 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Menu 2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Menu 3</a>
+                        </li>
+                    </ul>
+        
+        
+                    <!-- <ol class="breadcrumb page-breadcrumb">
+                        <li>
+                            <a routerLink="/" routerLinkActive="active">Home</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;
+                        </li>
+        
+                        <li *showAuthed=true>
+                            <a routerLink="/certified-report" routerLinkActive="active">Dashboard</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;
+                        </li>
+                        <li *showAuthed=false><a routerLink="/login" routerLinkActive="active">Sign In</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
+                        <li *showAuthed=true><a routerLink="/logout" routerLinkActive="active">Log Out</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
+        
+                    </ol> -->
+        
+                </div>
+            </div>
     <div class="row" *ngIf='portalFigures'>
         <div class="col">
             <div class="top-tiles">
