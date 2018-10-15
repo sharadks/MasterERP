@@ -1,11 +1,11 @@
-<div *ngIf="isLoggedIn" class="container-fluid certified-report">
-        <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
+<div *ngIf="isLoggedIn" class="certified-report">
+ <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
                 <div class="container-fluid">
                     <div class="page-header pull-left">
                         <div class="page-title">Online Dashboard Portal</div>
                     </div>
         
-                    <ul class="navbar-nav sub-nav">
+                    <ul class="sub-nav">
                         <li class="nav-item active">
                             <a class="nav-link" href="#">Menu 1</a>
                         </li>
@@ -16,6 +16,31 @@
                             <a class="nav-link" href="#">Menu 3</a>
                         </li>
                     </ul>
+					<div class="float-right fil-form">
+					<form class="form-inline" role="form">
+    <label for="email2" class="mb-2 mr-sm-2">From : </label>
+    <input type="text" class="form-control mb-1 mr-sm-1" id="email2" placeholder="DD/MM/YY">
+    <label for="pwd2" class="mb-2 mr-sm-1">To :</label>
+    <input type="text" class="form-control mb-1 mr-sm-1" id="pwd2" placeholder="DD/MM/YY">
+    <select _ngcontent-c3="" class="form-control mb-1 mr-sm-1">
+           <option _ngcontent-c3="" value="0" ng-reflect-value="0">--All--</option>
+           <!--bindings={
+  "ng-reflect-ng-for-of": "[object Object],[object Object"
+}--><option _ngcontent-c3="" value="1" ng-reflect-value="1">
+              JCB
+           </option><option _ngcontent-c3="" value="2" ng-reflect-value="2">
+              Apple
+           </option><option _ngcontent-c3="" value="3" ng-reflect-value="3">
+              Escorts
+           </option><option _ngcontent-c3="" value="4" ng-reflect-value="4">
+              SML
+           </option><option _ngcontent-c3="" value="5" ng-reflect-value="5">
+              BMW
+           </option>
+        </select> 
+
+  </form>
+					</div>
         
         
                     <!-- <ol class="breadcrumb page-breadcrumb">
@@ -33,6 +58,8 @@
         
                 </div>
             </div>
+<div  class="container-fluid ">
+       
     <div class="row" *ngIf='portalFigures'>
         <div class="col">
             <div class="top-tiles">
@@ -186,3 +213,4 @@
                     </div>
             </div>
 </p-dialog>
+</div>

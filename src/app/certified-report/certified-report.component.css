@@ -99,4 +99,65 @@
 }
 
 
-/******************* Faltu *************/
+/******************* Change Header to Certified Report *************/
+.page-title-breadcrumb{background:#fff; margin-bottom:20px;
+	box-shadow: 0 0px 24px 0 rgba(0, 0, 0, 0.06), 0 1px 0px 0 rgba(0, 0, 0, 0.02);}
+.page-title-breadcrumb .breadcrumb {
+    float: right;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 0;
+    background: transparent;
+    padding-top: 17px;
+    margin-left: 10px;
+	
+}
+
+.page-title-breadcrumb .page-header .page-title {
+    font-size: 25px;
+    font-weight: 300;
+    display: inline-block;
+    padding-top: 5px;
+    margin: 0 0 0 135px
+}
+
+.sub-nav {
+    display: inline-block;
+    
+    background: #eff2f3;
+	margin:0px; 
+	margin-left: 100px;
+	padding:0px;
+	font-size:0px;
+}
+
+.sub-nav li {
+    display: inline-block;
+    border-right: 1px #fff solid;
+	font-size:13px;
+}
+
+.sub-nav li a {
+    display: inline-block;
+    color: #000;
+    transition: all 0.3s ease-in-out;
+	padding:15px 15px;
+	position:relative
+}
+
+.sub-nav li a:after {
+	position:absolute;
+	top:1px;
+	left:0px;
+	width:0px;
+	content:"";
+    background: #2a3b4c;
+    height:2px;
+	transition:all 0.3s ease-in-out;
+}
+.sub-nav li a:hover{background:#fff;}
+.sub-nav li a:hover:after {width:100%}
+.fil-form{margin-top:7px}
+.fil-form .form-control{max-width:100px; margin-right:10px!important }
+.fil-form select.form-control:not([size]):not([multiple]){height:auto}

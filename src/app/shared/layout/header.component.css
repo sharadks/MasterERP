@@ -5,12 +5,13 @@
 #topbar .navbar-header {
     width: 150px !important;
 }
-
+#topbar .side-nav{font-size:15px;}
 #topbar .navbar-header #logo {
     position: absolute;
     top: 0px;
     left: 27px;
     padding: 0px;
+	
 }
 
 .center-block {
@@ -18,9 +19,21 @@
     margin-right: auto;
     margin-left: auto;
 }
+.navbar-dark .navbar-nav .nav-item{position:relative; margin-right:4px;}
+.navbar-dark .navbar-nav .nav-item:after{    position: absolute;
+    top: 50%;
+    left: -2px;
+    width: 1px;
+    background: #696e73;
+    height: 14px;
+    content: "";
+    margin-top: -6px;
+}
+.navbar-dark .navbar-nav > .nav-item:first-child:after{display:none}
 
-.navbar-dark .navbar-nav .nav-link {
+.navbar-dark .navbar-nav .nav-item a {
     color: #fff;
+	cursor:pointer;
 }
 
 .navbar-nav>li>a {
@@ -28,10 +41,12 @@
     transition: all 0.3s ease-in-out;
 }
 
-.navbar-dark .navbar-nav .nav-link:hover {
+.navbar-dark .navbar-nav .nav-item a:hover,.navbar-dark .navbar-nav .nav-item.active a {
     background: #fff;
     color: #2a3b4c;
 }
+.navbar-dark .navbar-nav .nav-item.active:after{display:none}
+
 
 header .navbar {
     padding: 0px 0px
@@ -84,21 +99,3 @@ header .navbar {
     border-left: 4px solid transparent;
 }
 
-.page-title-breadcrumb .breadcrumb {
-    float: right;
-    margin-bottom: 0;
-    padding-left: 0;
-    padding-right: 0;
-    border-radius: 0;
-    background: transparent;
-    padding-top: 17px;
-    margin-left: 10px;
-}
-
-.page-title-breadcrumb .page-header .page-title {
-    font-size: 25px;
-    font-weight: 300;
-    display: inline-block;
-    padding-top: 5px;
-    margin: 0 0 0 135px
-}
