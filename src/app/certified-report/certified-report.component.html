@@ -38,14 +38,14 @@
             <div class="top-tiles">
                 <ul>
                     <li>
-                        <div class="card-counter" (click)='getGridData("get_total_portal")'>
+                        <div class="card-counter" (click)='getGridData("get_total_portal", "Total Portal")'>
                             <span class="count-numbers">{{portalFigures.total_protal}}</span>
                             <span class="count-name"><i class="fa fa-user" aria-hidden="true"></i> Total Portals</span>
 
                         </div>
                     </li>
                     <li>
-                        <div class="card-counter" (click)='getGridData("get_total_dealer")'>
+                        <div class="card-counter" (click)='getGridData("get_total_dealer", "Total Dealers")'>
                             <span class="count-numbers">{{portalFigures.total_dealers}}</span>
                             <span class="count-name"><i class="fa fa-user" aria-hidden="true"></i> Total Dealers</span>
 
@@ -54,7 +54,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="card-counter" (click)='getGridData("get_total_portal")'>
+                        <div class="card-counter" (click)='getGridData("get_total_portal", "Total Employees")'>
 
                             <span class="count-numbers">{{portalFigures.total_emp}}</span>
                             <span class="count-name"><i class="fa fa-user" aria-hidden="true"></i>Total Employees</span>
@@ -63,7 +63,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="card-counter" (click)='getGridData("get_order_by_dealer")'>
+                        <div class="card-counter" (click)='getGridData("get_order_by_dealer", "Order place by Dealers")'>
                             <span class="count-numbers">{{portalFigures.order_place_by_dealers}}</span>
                             <span class="count-name"><i class="fa fa-user" aria-hidden="true"></i>Order place by Dealers</span>
 
@@ -72,21 +72,21 @@
                         </div>
                     </li>
                     <li>
-                        <div class="card-counter" (click)='getGridData("get_total_portal")'>
+                        <div class="card-counter" (click)='getGridData("get_total_portal","Order Place by Employees")'>
                             <span class="count-numbers">{{portalFigures.order_place_by_emp}}</span>
                             <span class="count-name"><i class="fa fa-user" aria-hidden="true"></i>Order Place by Employees</span>
 
                         </div>
                     </li>
                     <li>
-                        <div class="card-counter" (click)='getGridData("get_total_portal")'>
+                        <div class="card-counter" (click)='getGridData("get_total_portal", "Total Orders Received by Dealer")'>
                             <span class="count-numbers">{{portalFigures.total_order_received_by_dealer}}</span>
                             <span class="count-name"><i class="fa fa-user" aria-hidden="true"></i>Total Orders Received by Dealer</span>
 
                         </div>
                     </li>
                     <li>
-                        <div class="card-counter" (click)='getGridData("total_order_recived_by_emp")'>
+                        <div class="card-counter" (click)='getGridData("total_order_recived_by_emp", "Total Orders Received by Employees")'>
                             <span class="count-numbers">{{portalFigures.total_order_received_by_emp}}</span>
                             <span class="count-name"><i class="fa fa-user" aria-hidden="true"></i>Total Orders Received by
                     Employees</span>
@@ -100,45 +100,45 @@
             <div class="top-tiles">
                 <ul>
                     <li>
-                        <div class="card-counter" (click)='getGridData("total_order_qnty")'>
+                        <div class="card-counter" (click)='getGridData("total_order_qnty", "Total Order Qty")'>
                             <span class="count-numbers">{{portalFigures.total_order_qty}}</span>
                             <span class="count-name"><i class="fa fa-user" aria-hidden="true"></i> Total Order Qty</span>
 
                         </div>
                     </li>
                     <li>
-                        <div class="card-counter" (click)='getGridData("total_order_amount")'>
+                        <div class="card-counter" (click)='getGridData("total_order_amount", "otal Order Amount")'>
                             <span class="count-numbers">{{portalFigures.total_order_amt}}</span>
                             <span class="count-name"><i class="fa fa-user" aria-hidden="true"></i> Total Order Amount</span>
                         </div>
                     </li>
                     <li>
-                        <div class="card-counter" (click)='getGridData("total_order_dispatch")'>
+                        <div class="card-counter" (click)='getGridData("total_order_dispatch", "Total order dispatch")'>
                             <span class="count-numbers">{{portalFigures.total_order_dispatch}}</span>
                             <span class="count-name"><i class="fa fa-user" aria-hidden="true"></i>Total order dispatch</span>
 
                         </div>
                     </li>
                     <li>
-                        <div class="card-counter" (click)='getGridData("order_dispatch_ontime")'>
+                        <div class="card-counter" (click)='getGridData("order_dispatch_ontime", "Orde Dispatch on Time")'>
                             <span class="count-numbers">{{portalFigures.order_dispatch_on_time}}</span>
                             <span class="count-name"><i class="fa fa-user" aria-hidden="true"></i>Orde Dispatch on Time</span>
                         </div>
                     </li>
                     <li>
-                        <div class="card-counter" (click)='getGridData("delayed_order")'>
+                        <div class="card-counter" (click)='getGridData("delayed_order", "Delay Orders")'>
                             <span class="count-numbers">{{portalFigures.delary_orders}}</span>
                             <span class="count-name"><i class="fa fa-user" aria-hidden="true"></i>Delay Orders</span>
                         </div>
                     </li>
                     <li>
-                        <div class="card-counter" (click)='getGridData("total_order_pending")'>
+                        <div class="card-counter" (click)='getGridData("total_order_pending", "Total order Pending")'>
                             <span class="count-numbers">{{portalFigures.total_order_pending}}</span>
                             <span class="count-name"><i class="fa fa-user" aria-hidden="true"></i>Total order Pending</span>
                         </div>
                     </li>
                     <li>
-                        <div class="card-counter" (click)='getGridData("cancel_order")'>
+                        <div class="card-counter" (click)='getGridData("cancel_order","Cancel Orders")'>
                             <span class="count-numbers">{{portalFigures.cancel_order}}</span>
                             <span class="count-name"><i class="fa fa-user" aria-hidden="true"></i>Cancel Orders</span>
                         </div>
@@ -150,26 +150,7 @@
     </div>
     <div class="row" style="margin-top: 20px;">
         <div class="col">
-            <div class="card" *ngIf="tableData">
-                <div class="card-header">Portal Result </div>
-                <div class="card-body">
-                    <div class="row" style="margin-top: 20px">
-
-                        <div class="col">
-                            <div class="table-responsive">
-                                <p-dataTable [value]="tableData" [tableStyle]="{'text-align':'center'}" scrollable="true" scrollHeight="350px" [resizableColumns]="true" [paginator]="true" [rows]="10" [pageLinks]="6" [rowsPerPageOptions]='[5,10,15]'>
-                                    <p-header>
-                                    </p-header>
-                                    <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header" [sortable]="true" [filter]="true" [style]="{'width':'125px'}" columnResizeMode="expand">
-                                    </p-column>
-                                </p-dataTable>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
+            
             <div class="card">
                 <div class="card-header">Portal Figure </div>
                 <div class="card-body">
@@ -185,3 +166,23 @@
         </div>
     </div>
 </div>
+
+<p-dialog [(visible)]="display" [width]='1000' [modal]=true>
+        <p-header>
+                {{header}}
+            </p-header>
+            <div class="card" *ngIf="tableData">
+                        <div class="row" style="margin-top: 20px">
+                            <div class="col">
+                                <div class="table-responsive">
+                                    <p-dataTable [value]="tableData" [tableStyle]="{'text-align':'center'}" scrollable="true" scrollHeight="350px" [resizableColumns]="true" [paginator]="true" [rows]="10" [pageLinks]="6" [rowsPerPageOptions]='[5,10,15]'>
+                                        <p-header>
+                                        </p-header>
+                                        <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header" [sortable]="true" [filter]="true" [style]="{'width':'125px'}" columnResizeMode="expand">
+                                        </p-column>
+                                    </p-dataTable>
+                                </div>
+                            </div>
+                    </div>
+            </div>
+</p-dialog>

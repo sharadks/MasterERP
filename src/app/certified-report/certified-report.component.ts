@@ -29,6 +29,8 @@ private isLoggedIn:boolean= false;
 private graphData:any;
 private DEFAULT_COLORS:any;
 private graphColors:any;
+private display: boolean = false;
+private header: any;
 
   constructor(private reportService: ReportService, private jwtService: JwtService, private calendar: NgbCalendar, private router:Router) {
     this. DEFAULT_COLORS = ['#3366CC', '#DC3912', '#FF9900', '#109618', '#990099',
@@ -126,10 +128,11 @@ private graphColors:any;
     return customColours;
 }
 
-  getGridData(path){
+  getGridData(path, heading){
     this.postObject.Columns[2].Data=this.portalId;
     this.reportService.getGridData(environment[path],this.postObject).subscribe(
         data => {
+          
             this.tableData = null;
             this.colValues = null;
             this.cols = [];
@@ -138,6 +141,8 @@ private graphColors:any;
          for(let i=0;i<this.colValues.length;i++){
              this.cols.push({field: this.colValues[i], header: this.colValues[i]})
          }
+         this.header = heading;
+         this.display= true;
         },
         err => {
           //this.errors = err;

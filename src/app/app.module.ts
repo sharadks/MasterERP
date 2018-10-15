@@ -14,6 +14,8 @@ import {TrainingModule} from './training/training.module';
 import {SelfserviceReportModule} from './selfservice-report/selfservice-report.module';
 import {ChartModule} from 'primeng/primeng';
 import {DataTableModule} from 'primeng/primeng';
+import {DialogModule} from 'primeng/primeng';
+
 
 
 import {
@@ -52,6 +54,7 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], {useHash:false
         TrainingModule,
         SelfserviceReportModule,
         ChartModule,
+        DialogModule,
         DataTableModule
     ],
     providers: [
