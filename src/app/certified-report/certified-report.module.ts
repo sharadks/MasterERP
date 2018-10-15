@@ -8,6 +8,7 @@ import {DialogModule} from 'primeng/primeng';
 import {DataTableModule} from 'primeng/primeng';
 import { Component, OnInit } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const certifiedReportRouting: ModuleWithProviders = RouterModule.forChild([
     {
@@ -25,7 +26,8 @@ const certifiedReportRouting: ModuleWithProviders = RouterModule.forChild([
         ChartModule,
         DataTableModule,
         NgbModule,
-        DialogModule
+        DialogModule,
+        BrowserAnimationsModule
     ],
     declarations: [CertifiedReportComponent]
 })

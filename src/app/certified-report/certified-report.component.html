@@ -19,25 +19,34 @@
 					<div class="float-right fil-form">
 					<form class="form-inline" role="form">
     <label for="email2" class="mb-2 mr-sm-2">From : </label>
-    <input type="text" class="form-control mb-1 mr-sm-1" id="email2" placeholder="DD/MM/YY">
+    <form class="form-inline">
+            <div class="form-group">
+                <div class="input-group">
+                    <input class="form-control" placeholder="yyyy-mm-dd" name="d1" [(ngModel)]="fromDate" ngbDatepicker #d1="ngbDatepicker" (ngModelChange)="updateDate(fromDate,toDate)" style="margin-right: 0px!important;">
+                    <button class="input-group-addon" (click)="d1.toggle()" type="button">
+          <i class="fa fa-calendar"></i>
+          </button>
+                </div>
+            </div>
+        </form>
     <label for="pwd2" class="mb-2 mr-sm-1">To :</label>
-    <input type="text" class="form-control mb-1 mr-sm-1" id="pwd2" placeholder="DD/MM/YY">
-    <select _ngcontent-c3="" class="form-control mb-1 mr-sm-1">
-           <option _ngcontent-c3="" value="0" ng-reflect-value="0">--All--</option>
-           <!--bindings={
-  "ng-reflect-ng-for-of": "[object Object],[object Object"
-}--><option _ngcontent-c3="" value="1" ng-reflect-value="1">
-              JCB
-           </option><option _ngcontent-c3="" value="2" ng-reflect-value="2">
-              Apple
-           </option><option _ngcontent-c3="" value="3" ng-reflect-value="3">
-              Escorts
-           </option><option _ngcontent-c3="" value="4" ng-reflect-value="4">
-              SML
-           </option><option _ngcontent-c3="" value="5" ng-reflect-value="5">
-              BMW
-           </option>
-        </select> 
+    <form class="form-inline">
+            <div class="form-group">
+                <div class="input-group">
+                    <input class="form-control" placeholder="yyyy-mm-dd" name="d2" [(ngModel)]="toDate" ngbDatepicker #d2="ngbDatepicker" (ngModelChange)="updateDate(fromDate,toDate)" style="margin-right: 0px!important;">
+                    <button class="input-group-addon" (click)="d2.toggle()" type="button">
+          <i class="fa fa-calendar"></i>
+          </button>
+                </div>
+            </div>
+        </form>
+
+        <select (change)="getDataForFilters($event.target.value)" class="form-control">
+                <option value="0">--All--</option>
+                <option *ngFor="let portal of portalList" value={{portal.portal_id}}>
+                   {{portal.portal_name}}
+                </option>
+             </select> 
 
   </form>
 					</div>
