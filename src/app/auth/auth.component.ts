@@ -76,7 +76,7 @@ export class AuthComponent implements OnInit {
     .subscribe(
       data => {
         this.userService.setAuth(data);
-        this.router.navigateByUrl('/certified-report')   
+        this.router.navigateByUrl('/certified-report/dashboard')   
       },
       err => {
         this.errors = err.error_description;

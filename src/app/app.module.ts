@@ -15,6 +15,8 @@ import {SelfserviceReportModule} from './selfservice-report/selfservice-report.m
 import {ChartModule} from 'primeng/primeng';
 import {DataTableModule} from 'primeng/primeng';
 import {DialogModule} from 'primeng/primeng';
+import {TabMenuModule} from 'primeng/primeng';
+import {MenuItem} from 'primeng/primeng';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
@@ -57,7 +59,8 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], {useHash:false
         ChartModule,
         DialogModule,
         DataTableModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        TabMenuModule
     ],
     providers: [
         ApiService,
