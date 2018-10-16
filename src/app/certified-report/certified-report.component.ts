@@ -20,9 +20,9 @@ items: MenuItem[];
   this.items = [
       {label: 'Dashboard Portal', icon: 'fa fa-fw fa-bar-chart', routerLink: ['dashboard']},
       {label: 'Pending Orders', icon: 'fa fa-fw fa-calendar', routerLink: ['pending-orders']},
-      {label: 'Pending For Dispatch', icon: 'fa fa-fw fa-book', routerLink: ['pending-orders']},
-      {label: 'Cancel Orders', icon: 'fa fa-fw fa-support', routerLink: ['pending-orders']},
-      {label: 'Complete Orders', icon: 'fa fa-fw fa-twitter', routerLink: ['pending-orders']}
+      {label: 'Pending For Dispatch', icon: 'fa fa-fw fa-book', routerLink: ['pending-dispatch']},
+      {label: 'Cancel Orders', icon: 'fa fa-fw fa-support', routerLink: ['cancel-orders']},
+      {label: 'Complete Orders', icon: 'fa fa-fw fa-twitter', routerLink: ['complete-orders']}
   ];   
       }
   ngOnInit() {
