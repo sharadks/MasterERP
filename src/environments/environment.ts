@@ -33,6 +33,7 @@ export const environment = {
     cancel_order:'/api/DealerReports/GetDashboardPortalTotalOrderCancel',
     check_auth:'/api/Account/checkAuth',
     get_graph_data:'/api/DashboardGraph/DashboardChartData?user_id=',
+    get_pending_orders:'/api/DealerReports/GetDashboardPendingOrdersAll',
     login_auth_path: '/users/user.json'
 };
 

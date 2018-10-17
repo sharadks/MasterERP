@@ -164,3 +164,7 @@
 .fil-form select.form-control:not([size]):not([multiple]){height:auto}
 
 .fil-form .input-group-addon{margin-right:7px}
+
+.myTable td:nth-child(1) {
+    width: 20px;
+}
