@@ -165,6 +165,6 @@
 
 .fil-form .input-group-addon{margin-right:7px}
 
-.myTable td:nth-child(1) {
-    width: 20px;
-}
+.ui-datatable-scrollable-header-box table th, .ui-datatable-scrollable-footer-box table th, .ui-datatable-scrollable-body table td{
+    width: 20% !important;
+ }

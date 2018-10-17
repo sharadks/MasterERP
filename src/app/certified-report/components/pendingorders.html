@@ -1,22 +1,25 @@
 <p-dataTable [value]="pendingOrderList" [tableStyle]="{'text-align':'center'}" scrollable="true" scrollHeight="350px" [resizableColumns]="true" [paginator]="true" [rows]="10" [pageLinks]="6" [rowsPerPageOptions]='[5,10,15]'>                   
     <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header" [sortable]="true" [filter]="true" [style]="{'width':'125px'}" columnResizeMode="expand">
     </p-column>
-    <p-column [style]="{'width':'48px'}">        
+
+    <p-column>        
             <ng-template let-h="rowData" pTemplate="" >
-                 <button type="button" pButton (click)="deleteVendorRecord(h)">Action</button>
-            </ng-template>
+                 <button type="button" pButton (click)="Action(h)">Action</button>
+            </ng-template>   
     </p-column>
-    
 </p-dataTable>
 
 
 
-<p-dialog [(visible)]="display" [width]='500' [modal]=true>
+<p-dialog [(visible)]="displayApprove" [width]='500' [modal]=true>
+        <p-header>
+                Approve
+        </p-header>
         <div class="card">
                 <div class="row" style="margin-top: 20px">
                     <div class="col">
                         <div class="table-responsive">
-                            {{popUpData}}
+                            
                         </div>
                     </div>
             </div>

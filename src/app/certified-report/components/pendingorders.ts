@@ -19,8 +19,10 @@ export class PendingOrderComponent implements OnInit {
   private portalId : any;
   private colValues:any;
   private cols:any;
-  private display= false;
+  private displayApprove= false;
+  private displayCancel= false;
   private popUpData;any;
+  private paymentObj:any;
 
   constructor(private reportService: ReportService, private jwtService: JwtService, private calendar: NgbCalendar, private router:Router) {
     this.currentUser = this.jwtService.getCurrentUser();
@@ -43,6 +45,7 @@ export class PendingOrderComponent implements OnInit {
           data => {
             this.colValues=[];
             this.cols=[];
+            //this.cols.push({field: 'Action', header: 'Action'})
             this.pendingOrderList = data.data;
             if(this.pendingOrderList.length) {
               this.colValues = Object.keys(this.pendingOrderList[0]);
@@ -58,9 +61,27 @@ export class PendingOrderComponent implements OnInit {
     }
 
 
-    deleteVendorRecord(row):void{         
-      this.popUpData =  row;
-      this.display=true;
-      console.log(this.popUpData);
+    Action(row){         
+     
+      this.paymentObj = {
+        "tran_id" : '1', 
+        "portal_id" : row.portal_id, 
+        "type" : row.type,  
+        "dealer_emp_id":row.dealer_emp_id,  
+        "order_no":row.order_no, 
+        "order_date":row.date
+      }
+      
+      this.reportService.gatPendingOrderPaymentDetail(environment.get_pendingOrder_details,this.paymentObj).subscribe(
+        data => {
+          this.popUpData =  data;
+          this.displayApprove=true;
+          console.log(this.popUpData);
+        },
+        err => {
+          //this.errors = err;
+        }
+      );
+
     }
 }
