@@ -35,6 +35,7 @@ export const environment = {
     get_graph_data:'/api/DashboardGraph/DashboardChartData?user_id=',
     get_pending_orders:'/api/DealerReports/GetDashboardPendingOrdersAll',
     get_pendingOrder_details:'/api/OrderApproval/orderApprovalGetPaymentDetails',
+    get_pendingDispatch_order:'/api/DealerReports/GetDashboardOrdersPendingDispatch',
     login_auth_path: '/users/user.json'
 };
 
