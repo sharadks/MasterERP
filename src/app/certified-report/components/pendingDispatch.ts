@@ -41,7 +41,7 @@ export class PendingDispatchComponent implements OnInit {
         { "Data" : this.portalId, "Name" : "portal_id", "Searchable" : "true", "Orderable" : "false"}
       ]
       }
-      this.reportService.gatPendingOrders(environment.get_pending_orders,this.postObject).subscribe(
+      this.reportService.gatPendingOrders(environment.get_pendingDispatch_order,this.postObject).subscribe(
           data => {
             this.colValues=[];
             this.cols=[];
