@@ -23,6 +23,9 @@ export class PendingOrderComponent implements OnInit {
   private displayCancel= false;
   private popUpData;any;
   private paymentObj:any;
+  private setApprove = {
+    status:true
+  };
 
   constructor(private reportService: ReportService, private jwtService: JwtService, private calendar: NgbCalendar, private router:Router) {
     this.currentUser = this.jwtService.getCurrentUser();
@@ -84,4 +87,5 @@ export class PendingOrderComponent implements OnInit {
       );
 
     }
+
 }
