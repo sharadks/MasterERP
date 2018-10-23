@@ -164,3 +164,12 @@
 .fil-form select.form-control:not([size]):not([multiple]){height:auto}
 
 .fil-form .input-group-addon{margin-right:7px}
+
+.ui-datatable.myTable th {
+    background: red;
+    width: 20px;
+}
+
+.myTable {
+    width: 20px;
+}

@@ -3,8 +3,8 @@
         <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header" [sortable]="true" [filter]="true" [style]="{'width':'125px', 'margin':'50px'}" columnResizeMode="expand">
         </p-column>
 
-        <p-column [style]="{'width':'auto'}" columnResizeMode="expand" colspan="10">
-            <ng-template let-h="rowData" pTemplate="">
+        <p-column>
+            <ng-template let-h="rowData" pTemplate="table">
                 <span class="float-left">
                  <button type="button" pButton (click)="Action(h)" class="btn btn-primary">Action</button>
 				 </span>

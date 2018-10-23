@@ -55,6 +55,10 @@ export class PendingOrderComponent implements OnInit {
               for(let i=0;i<this.colValues.length;i++){
                   this.cols.push({field: this.colValues[i], header: this.colValues[i]})
               }
+              // this.cols.push(
+              //   {field: 'Action', 
+              //   header: 'Action'
+              // })
            }
           },
           err => {
@@ -64,8 +68,55 @@ export class PendingOrderComponent implements OnInit {
     }
 
 
-    Action(row){         
+    Action(row) {         
      
+      this.paymentObj = {
+        "tran_id" : '1', 
+        "portal_id" : row.portal_id, 
+        "type" : row.type,  
+        "dealer_emp_id":row.dealer_emp_id,  
+        "order_no":row.order_no, 
+        "order_date":row.date
+      }
+      
+      this.reportService.gatPendingOrderPaymentDetail(environment.get_pendingOrder_details,this.paymentObj).subscribe(
+        data => {
+          this.popUpData =  data;
+          this.displayApprove=true;
+          console.log(this.popUpData);
+        },
+        err => {
+          //this.errors = err;
+        }
+      );
+
+    }
+
+    Approve(row) {         
+     
+      this.paymentObj = {
+        "tran_id" : '1', 
+        "portal_id" : row.portal_id, 
+        "type" : row.type,  
+        "dealer_emp_id":row.dealer_emp_id,  
+        "order_no":row.order_no, 
+        "order_date":row.date
+      }
+      
+      this.reportService.gatPendingOrderPaymentDetail(environment.get_pendingOrder_details,this.paymentObj).subscribe(
+        data => {
+          this.popUpData =  data;
+          this.displayApprove=true;
+          console.log(this.popUpData);
+        },
+        err => {
+          //this.errors = err;
+        }
+      );
+
+    }
+
+    Cancel(row) {         
       this.paymentObj = {
         "tran_id" : '1', 
         "portal_id" : row.portal_id, 

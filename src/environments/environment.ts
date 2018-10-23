@@ -36,6 +36,7 @@ export const environment = {
     get_pending_orders:'/api/DealerReports/GetDashboardPendingOrdersAll',
     get_pendingOrder_details:'/api/OrderApproval/orderApprovalGetPaymentDetails',
     get_pendingDispatch_order:'/api/DealerReports/GetDashboardOrdersPendingDispatch',
+    get_cancel_order:'/api/DealerReports/GetDashboardOrdersCancel',
     login_auth_path: '/users/user.json'
 };
 
