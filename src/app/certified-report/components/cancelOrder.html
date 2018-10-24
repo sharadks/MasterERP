@@ -1,5 +1,11 @@
 <div class="container-fluid">
     <p-dataTable [value]="cancelOrderList" [tableStyle]="{'text-align':'center'}" scrollable="true" scrollHeight="350px" [resizableColumns]="true" [paginator]="true" [rows]="10" [pageLinks]="6" [rowsPerPageOptions]='[5,10,15]'>                   
+        
+            <p-column [style]="{'width':'50px'}" header='Sr.No'>
+                    <ng-template let-i="rowIndex" pTemplate="" >
+                            {{i}}
+                    </ng-template>
+            </p-column>
         <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header" [sortable]="true" [filter]="true" [style]="{'width':'125px'}" columnResizeMode="expand">
         </p-column>
     </p-dataTable>
