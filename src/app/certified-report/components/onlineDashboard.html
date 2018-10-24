@@ -182,7 +182,7 @@
             <div class="col">
                 <div class="table-responsive">
                     <p-dataTable [value]="tableData" [tableStyle]="{'text-align':'center'}" scrollable="true" scrollHeight="350px" [resizableColumns]="true" [paginator]="true" [rows]="10" [pageLinks]="6" [rowsPerPageOptions]='[10,50,100]'>
-                            <p-column [style]="{'width':'50px'}" header='Sr.No'>
+                            <p-column [hidden]='!tableData.length' [style]="{'width':'50px'}" header='Sr.No'>
                                     <ng-template let-i="rowIndex" pTemplate="" >
                                             {{i+1}}
                                     </ng-template>
