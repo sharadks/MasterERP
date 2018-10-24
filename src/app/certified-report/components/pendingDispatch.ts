@@ -88,7 +88,7 @@ export class PendingDispatchComponent implements OnInit {
     Action(row) {         
      
       this.paymentObj = {
-        "tran_id" : '1', 
+        "tran_id" : row.tran_id, 
         "portal_id" : row.portal_id, 
         "type" : row.type,  
         "dealer_emp_id":row.dealer_emp_id,  
