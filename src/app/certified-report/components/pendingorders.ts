@@ -21,7 +21,24 @@ export class PendingOrderComponent implements OnInit {
   private cols:any;
   private displayApprove= false;
   private displayCancel= false;
-  private popUpData;any;
+  public popUpData:any = {
+    'amount': null,
+	  'approval': null,
+	  'bank_ref_no': null,
+	  'card_no': null,
+	  'dealer_emp_id':null, 
+	  'new_identity': null,
+  	'order_date': null,
+	  'order_no': null,
+	  'order_status': null,
+	  'payment_mode': null,
+	  'portal_id': null,
+	  'tracking_id': null,
+	  'tran_id': null,
+	  'type': null,
+	  'user_id': null
+  };
+  public updateStatusObj:any = {}
   private paymentObj:any;
   private setApprove = {
     status:true
@@ -48,17 +65,12 @@ export class PendingOrderComponent implements OnInit {
           data => {
             this.colValues=[];
             this.cols=[];
-            //this.cols.push({field: 'Action', header: 'Action'})
             this.pendingOrderList = data.data;
             if(this.pendingOrderList.length) {
               this.colValues = Object.keys(this.pendingOrderList[0]);
               for(let i=0;i<this.colValues.length;i++){
                   this.cols.push({field: this.colValues[i], header: this.colValues[i]})
-              }
-              // this.cols.push(
-              //   {field: 'Action', 
-              //   header: 'Action'
-              // })
+              }  
            }
           },
           err => {
@@ -81,7 +93,23 @@ export class PendingOrderComponent implements OnInit {
       
       this.reportService.gatPendingOrderPaymentDetail(environment.get_pendingOrder_details,this.paymentObj).subscribe(
         data => {
-          this.popUpData =  data;
+          this.popUpData =  {
+    'amount': data.amount,
+	  'approval': data.approval,
+	  'bank_ref_no': data.bank_ref_no,
+	  'card_no': data.card_no,
+	  'dealer_emp_id':data.dealer_emp_id, 
+	  'new_identity': data.new_identity,
+  	'order_date': data.order_date,
+	  'order_no': data.order_no,
+	  'order_status': data.order_status,
+	  'payment_mode': data.payment_mode,
+	  'portal_id': data.portal_id,
+	  'tracking_id': data.tracking_id,
+	  'tran_id': data.tran_id,
+	  'type': data.type,
+	  'user_id': data.user_id
+          };
           this.displayApprove=true;
           console.log(this.popUpData);
         },
@@ -92,22 +120,27 @@ export class PendingOrderComponent implements OnInit {
 
     }
 
-    Approve(row) {         
-     
-      this.paymentObj = {
-        "tran_id" : '1', 
-        "portal_id" : row.portal_id, 
-        "type" : row.type,  
-        "dealer_emp_id":row.dealer_emp_id,  
-        "order_no":row.order_no, 
-        "order_date":row.date
+    updateStatus(status) {    
+      this.updateStatusObj = {
+        "tran_id": this.popUpData.tran_id,
+        "portal_id": this.popUpData.portal_id,
+        "type": this.popUpData.type,
+        "dealer_emp_id": this.popUpData.dealer_emp_id,
+        "order_no": this.popUpData.order_no,
+        "order_date": this.popUpData.order_date,
+        "order_status": this.popUpData.order_status,
+        "approval": status,
+        "payment_mode": this.popUpData.payment_mode,
+        "bank_ref_no": this.popUpData.bank_ref_no,
+        "tracking_id": this.popUpData.tracking_id,
+        "card_no": this.popUpData.card_no,
+        "amount": this.popUpData.amount,
+        "user_id": this.popUpData.user_id
       }
-      
-      this.reportService.gatPendingOrderPaymentDetail(environment.get_pendingOrder_details,this.paymentObj).subscribe(
+      this.reportService.updatePendingOrderStatus(environment.update_order_status,this.updateStatusObj).subscribe(
         data => {
-          this.popUpData =  data;
-          this.displayApprove=true;
-          console.log(this.popUpData);
+          console.log(data);
+          this.getDefaultData();
         },
         err => {
           //this.errors = err;
@@ -116,27 +149,38 @@ export class PendingOrderComponent implements OnInit {
 
     }
 
-    Cancel(row) {         
-      this.paymentObj = {
-        "tran_id" : '1', 
-        "portal_id" : row.portal_id, 
-        "type" : row.type,  
-        "dealer_emp_id":row.dealer_emp_id,  
-        "order_no":row.order_no, 
-        "order_date":row.date
-      }
-      
-      this.reportService.gatPendingOrderPaymentDetail(environment.get_pendingOrder_details,this.paymentObj).subscribe(
-        data => {
-          this.popUpData =  data;
-          this.displayApprove=true;
-          console.log(this.popUpData);
-        },
-        err => {
-          //this.errors = err;
-        }
-      );
 
+
+    getDefaultData() {
+      this.displayApprove = false;
+      this.postObject = 
+      { 
+      Draw : "1", "Start" : "1", "Length" : "100",
+      Search : { "Value" : "", "Regex" : "" },
+      Order : [{"Column" : "0", "Dir" : "asc"}, {"Column" : "1", "Dir" : ""}, {"Column" : "2", "Dir" : ""}],
+      Columns : [
+        { "Data" : "", "Name" : "", "Searchable" : "true", "Orderable" : "false"},
+        { "Data" : this.currentUser.userId, "Name" : "user_id", "Searchable" : "true", "Orderable" : "false"},
+        { "Data" : this.portalId, "Name" : "portal_id", "Searchable" : "true", "Orderable" : "false"}
+      ]
+      }
+      this.reportService.gatPendingOrders(environment.get_pending_orders,this.postObject).subscribe(
+          data => {
+            this.colValues=[];
+            this.cols=[];
+            this.pendingOrderList = data.data;
+            if(this.pendingOrderList.length) {
+              this.colValues = Object.keys(this.pendingOrderList[0]);
+              for(let i=0;i<this.colValues.length;i++){
+                  this.cols.push({field: this.colValues[i], header: this.colValues[i]})
+              }  
+           }
+           
+          },
+          err => {
+            //this.errors = err;
+          }
+        );
     }
 
 }

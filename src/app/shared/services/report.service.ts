@@ -56,6 +56,15 @@ export class ReportService {
             }
         );
     };
+
+    updatePendingOrderStatus(url, data): Observable<any> {
+        return this.apiService.post(url, data)
+            .map(
+            data => {
+                return data;
+            }
+        );
+    };
     getGridData(url, data): Observable<any> {
         return this.apiService.post(url, data)
             .map(
