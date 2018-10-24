@@ -73,7 +73,9 @@ export class PendingOrderComponent implements OnInit {
             if(this.pendingOrderList.length) {
               this.colValues = Object.keys(this.pendingOrderList[0]);
               for(let i=0;i<this.colValues.length;i++){
-                  this.cols.push({field: this.colValues[i], header: this.colValues[i]})
+                if(this.colValues[i]!=='portal_id' && this.colValues[i]!=='dealer_id' && this.colValues[i]!=='tran_id' && this.colValues[i]!=='srno') {
+                  this.cols.push({field: this.colValues[i], header: this.colValues[i]});
+                } 
               }  
            }
           },
@@ -140,7 +142,6 @@ export class PendingOrderComponent implements OnInit {
         "amount": this.popUpData.amount,
         "user_id": this.popUpData.user_id
       }
-      console.log("======================",this.updateStatusObj);
       this.reportService.updatePendingOrderStatus(environment.update_order_status,this.updateStatusObj).subscribe(
         data => {
           console.log(data);
@@ -176,7 +177,9 @@ export class PendingOrderComponent implements OnInit {
             if(this.pendingOrderList.length) {
               this.colValues = Object.keys(this.pendingOrderList[0]);
               for(let i=0;i<this.colValues.length;i++){
-                  this.cols.push({field: this.colValues[i], header: this.colValues[i]})
+                if(this.colValues[i]!=='portal_id' && this.colValues[i]!=='dealer_id' && this.colValues[i]!=='tran_id' && this.colValues[i]!=='srno') {
+                  this.cols.push({field: this.colValues[i], header: this.colValues[i]});
+                }
               }  
            }
            

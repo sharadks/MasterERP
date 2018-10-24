@@ -47,8 +47,9 @@ export class CompleteOrderComponent implements OnInit {
             if(this.completeOrderList.length) {
               this.colValues = Object.keys(this.completeOrderList[0]);
               for(let i=0;i<this.colValues.length;i++){
-                  this.cols.push({field: this.colValues[i], header: this.colValues[i]})
-              }
+                if(this.colValues[i]!=='portal_id' && this.colValues[i]!=='dealer_id' && this.colValues[i]!=='tran_id' && this.colValues[i]!=='srno') {
+                  this.cols.push({field: this.colValues[i], header: this.colValues[i]});
+                }              }
            }
           },
           err => {

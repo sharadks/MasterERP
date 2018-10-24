@@ -74,8 +74,9 @@ export class PendingDispatchComponent implements OnInit {
             if(this.PendingDishpatchList.length) {
               this.colValues = Object.keys(this.PendingDishpatchList[0]);
               for(let i=0;i<this.colValues.length;i++){
-                  this.cols.push({field: this.colValues[i], header: this.colValues[i]})
-              }
+                if(this.colValues[i]!=='portal_id' && this.colValues[i]!=='dealer_id' && this.colValues[i]!=='tran_id' && this.colValues[i]!=='srno') {
+                  this.cols.push({field: this.colValues[i], header: this.colValues[i]});
+                }              }
            }
           },
           err => {
@@ -176,8 +177,9 @@ export class PendingDispatchComponent implements OnInit {
             if(this.PendingDishpatchList.length) {
               this.colValues = Object.keys(this.PendingDishpatchList[0]);
               for(let i=0;i<this.colValues.length;i++){
-                  this.cols.push({field: this.colValues[i], header: this.colValues[i]})
-              }
+                if(this.colValues[i]!=='portal_id' && this.colValues[i]!=='dealer_id' && this.colValues[i]!=='tran_id' && this.colValues[i]!=='srno') {
+                  this.cols.push({field: this.colValues[i], header: this.colValues[i]});
+                }              }
            }
           },
           err => {
