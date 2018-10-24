@@ -44,6 +44,9 @@ export class PendingDispatchComponent implements OnInit {
   private setApprove = {
     status:true
   };
+  public StatusList:any = ['Approved','Not Approved'];
+  public statusRejectList:any = ['Cancel'];
+  public selectedListType:any;
 
   constructor(private reportService: ReportService, private jwtService: JwtService, private calendar: NgbCalendar, private router:Router) {
     this.currentUser = this.jwtService.getCurrentUser();
@@ -132,7 +135,7 @@ export class PendingDispatchComponent implements OnInit {
         "order_no": this.popUpData.order_no,
         "order_date": this.popUpData.order_date,
         "order_status": this.popUpData.order_status,
-        "approval": status,
+        "approval": this.selectedListType,
         "payment_mode": this.popUpData.payment_mode,
         "bank_ref_no": this.popUpData.bank_ref_no,
         "tracking_id": this.popUpData.tracking_id,

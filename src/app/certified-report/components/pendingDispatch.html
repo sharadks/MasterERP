@@ -1,4 +1,4 @@
-<div>
+<div class="container-fluid">
     <p-dataTable [value]="PendingDishpatchList" [tableStyle]="{'text-align':'center'}" scrollable="true" scrollHeight="350px" [resizableColumns]="true" [paginator]="true" [rows]="10" [pageLinks]="6" [rowsPerPageOptions]='[5,10,15]'>                   
         <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header" [sortable]="true" [filter]="true" [style]="{'width':'125px'}" columnResizeMode="expand">
         </p-column>
@@ -9,7 +9,7 @@
                 </ng-template>   
         </p-column>
     </p-dataTable>
-    </div>
+</div>
     
     
     
@@ -46,9 +46,9 @@
                             <div class="form-group row">
                                 <label class="col-sm-4 col-form-label">Status</label>
                                 <div class="col-sm-8">
-                                    <select class="form-control">
-                                            <option>Cancel</option>    
-                                    </select>
+                                        <select class="form-control" [(ngModel)]='selectedListType'>
+                                                <option *ngFor="let type of statusRejectList" [value]="type">{{type}}</option>
+                                        </select>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -72,9 +72,9 @@
                             <div class="form-group row">
                                 <label class="col-sm-4 col-form-label">Approval</label>
                                 <div class="col-sm-8">
-                                    <select class="form-control">
-                                        <option>Approve</option>
-                                    </select>
+                                        <select class="form-control" [(ngModel)]='selectedListType'>
+                                                <option *ngFor="let type of StatusList" [value]="type">{{type}}</option>
+                                        </select>
                                 </div>
                             </div>
                             <div class="form-group row">
