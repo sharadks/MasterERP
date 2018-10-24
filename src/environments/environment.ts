@@ -40,6 +40,7 @@ export const environment = {
     update_order_status:'/api/OrderApproval/OrderApprovalInsert',
     get_dispatchedorder_detail:'/api/OrderApproval/OrderDispatchGetDetails',
     update_dispatchedorder_status:'/api/OrderApproval/OrderDispatchInsert',
+    get_complete_orders:'/api/DealerReports/GetDashboardOrdersComplete',
     login_auth_path: '/users/user.json'
 };
 

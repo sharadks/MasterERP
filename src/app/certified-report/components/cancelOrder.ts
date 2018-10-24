@@ -59,30 +59,5 @@ export class CancelOrderComponent implements OnInit {
           }
         );
     }
-
-
-    Action(row){         
-     
-      this.paymentObj = {
-        "tran_id" : '1', 
-        "portal_id" : row.portal_id, 
-        "type" : row.type,  
-        "dealer_emp_id":row.dealer_emp_id,  
-        "order_no":row.order_no, 
-        "order_date":row.date
-      }
-      
-      this.reportService.gatPendingOrderPaymentDetail(environment.get_pendingOrder_details,this.paymentObj).subscribe(
-        data => {
-          this.popUpData =  data;
-          this.displayApprove=true;
-          console.log(this.popUpData);
-        },
-        err => {
-          //this.errors = err;
-        }
-      );
-
-    }
 }
 
