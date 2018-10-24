@@ -29,5 +29,11 @@ export const environment = {
     check_auth:'/api/Account/checkAuth',
     get_graph_data:'/api/DashboardGraph/DashboardChartData?user_id=',
     get_pending_orders:'/api/DealerReports/GetDashboardPendingOrdersAll',
+    get_pendingOrder_details:'/api/OrderApproval/orderApprovalGetPaymentDetails',
+    get_pendingDispatch_order:'/api/DealerReports/GetDashboardOrdersPendingDispatch',
+    get_cancel_order:'/api/DealerReports/GetDashboardOrdersCancel',
+    update_order_status:'/api/OrderApproval/OrderApprovalInsert',
+    get_dispatchedorder_detail:'/api/OrderApproval/OrderDispatchGetDetails',
+    update_dispatchedorder_status:'/api/OrderApproval/OrderDispatchInsert',
     login_auth_path: '/users/user.json'
 };

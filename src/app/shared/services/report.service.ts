@@ -48,7 +48,25 @@ export class ReportService {
         );
     };
 
+    gatPendingforDispatchedOrders(url, data): Observable<any> {
+        return this.apiService.post(url, data)
+            .map(
+            data => {
+                return data;
+            }
+        );
+    };
+
     gatPendingOrderPaymentDetail(url, data): Observable<any> {
+        return this.apiService.post(url, data)
+            .map(
+            data => {
+                return data;
+            }
+        );
+    };
+
+    gatPendingDispatchedOrderPaymentDetail(url, data): Observable<any> {
         return this.apiService.post(url, data)
             .map(
             data => {

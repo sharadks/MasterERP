@@ -38,6 +38,8 @@ export const environment = {
     get_pendingDispatch_order:'/api/DealerReports/GetDashboardOrdersPendingDispatch',
     get_cancel_order:'/api/DealerReports/GetDashboardOrdersCancel',
     update_order_status:'/api/OrderApproval/OrderApprovalInsert',
+    get_dispatchedorder_detail:'/api/OrderApproval/OrderDispatchGetDetails',
+    update_dispatchedorder_status:'/api/OrderApproval/OrderDispatchInsert',
     login_auth_path: '/users/user.json'
 };
 
