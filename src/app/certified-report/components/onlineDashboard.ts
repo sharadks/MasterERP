@@ -33,6 +33,7 @@ private graphColors:any;
 private display: boolean = false;
 private header: any;
 items: MenuItem[];
+public loading = false;
 
   constructor(private reportService: ReportService, private jwtService: JwtService, private calendar: NgbCalendar, private router:Router) {
     
@@ -141,10 +142,11 @@ items: MenuItem[];
 }
 
   getGridData(path, heading){
+    this.loading = true;
     this.postObject.Columns[2].Data=this.portalId;
     this.reportService.getGridData(environment[path],this.postObject).subscribe(
         data => {
-          
+          this.loading = false;
             this.tableData = null;
             this.colValues = null;
             this.cols = [];
@@ -154,10 +156,12 @@ items: MenuItem[];
              this.cols.push({field: this.colValues[i], header: this.colValues[i]})
          }
          this.header = heading;
+         
          this.display= true;
         },
         err => {
           //this.errors = err;
+          this.loading = false;
         }
       );
     }

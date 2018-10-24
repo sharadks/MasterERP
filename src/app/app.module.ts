@@ -18,6 +18,7 @@ import {DialogModule} from 'primeng/primeng';
 import {TabMenuModule} from 'primeng/primeng';
 import {MenuItem} from 'primeng/primeng';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxLoadingModule } from 'ngx-loading';
 
 
 
@@ -60,7 +61,8 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], {useHash:false
         DialogModule,
         DataTableModule,
         BrowserAnimationsModule,
-        TabMenuModule
+        TabMenuModule,
+        NgxLoadingModule.forRoot({})
     ],
     providers: [
         ApiService,

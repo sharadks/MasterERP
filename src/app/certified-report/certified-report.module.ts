@@ -16,6 +16,7 @@ import { Component, OnInit } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { isMoment } from 'moment';
+import { NgxLoadingModule } from 'ngx-loading';
 
 const certifiedReportRouting: ModuleWithProviders = RouterModule.forChild([
     {
@@ -57,7 +58,8 @@ const certifiedReportRouting: ModuleWithProviders = RouterModule.forChild([
         NgbModule,
         DialogModule,
         BrowserAnimationsModule,
-        TabMenuModule
+        TabMenuModule,
+        NgxLoadingModule
     ],
     declarations: [
         CertifiedReportComponent, 

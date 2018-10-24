@@ -46,6 +46,7 @@ export class PendingOrderComponent implements OnInit {
   public StatusList:any = ['Approved','Not Approved'];
   public statusRejectList:any = ['Cancel'];
   public selectedListType:any;
+  public loading = false;
 
   constructor(private reportService: ReportService, private jwtService: JwtService, private calendar: NgbCalendar, private router:Router) {
     this.currentUser = this.jwtService.getCurrentUser();
