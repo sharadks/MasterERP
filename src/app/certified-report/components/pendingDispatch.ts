@@ -44,8 +44,8 @@ export class PendingDispatchComponent implements OnInit {
   private setApprove = {
     status:true
   };
-  public StatusList:any = ['Approved','Not Approved'];
-  public statusRejectList:any = ['Cancel'];
+  public StatusList:any = ['Approved'];
+  public statusRejectList:any = ['Not Approved'];
   public selectedListType:any;
 
   constructor(private reportService: ReportService, private jwtService: JwtService, private calendar: NgbCalendar, private router:Router) {

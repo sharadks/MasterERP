@@ -43,8 +43,8 @@ export class PendingOrderComponent implements OnInit {
   private setApprove = {
     status:true
   };
-  public StatusList:any = ['Approved','Not Approved'];
-  public statusRejectList:any = ['Cancel'];
+  public StatusList:any = ['Approved'];
+  public statusRejectList:any = ['Not Approved'];
   public selectedListType:any;
   public loading = false;
 
@@ -144,7 +144,7 @@ export class PendingOrderComponent implements OnInit {
       }
       this.reportService.updatePendingOrderStatus(environment.update_order_status,this.updateStatusObj).subscribe(
         data => {
-          console.log(data);
+         // console.log(data);
           this.getDefaultData();
         },
         err => {
