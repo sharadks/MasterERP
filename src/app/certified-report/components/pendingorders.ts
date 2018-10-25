@@ -125,14 +125,15 @@ export class PendingOrderComponent implements OnInit {
 
     }
 
-    updateStatus(status) {    
+    updateStatus(status) { 
+
       this.updateStatusObj = {
-        "tran_id": this.popUpData.tran_id,
-        "portal_id": this.popUpData.portal_id,
-        "type": this.popUpData.type,
-        "dealer_emp_id": this.popUpData.dealer_emp_id,
-        "order_no": this.popUpData.order_no,
-        "order_date": this.popUpData.order_date,
+        "tran_id": this.paymentObj.tran_id,
+        "portal_id": this.paymentObj.portal_id,
+        "type": this.paymentObj.type,
+        "dealer_emp_id": this.paymentObj.dealer_emp_id,
+        "order_no": this.paymentObj.order_no,
+        "order_date": this.paymentObj.order_date,
         "order_status": this.popUpData.order_status,
         "approval": this.selectedListType,
         "payment_mode": this.popUpData.payment_mode,
