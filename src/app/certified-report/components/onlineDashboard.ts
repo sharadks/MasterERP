@@ -105,7 +105,7 @@ public loading = false;
          if(this.tableData.length) {
             this.colValues = Object.keys(this.tableData[0]);
             for(let i=0;i<this.colValues.length;i++){
-                this.cols.push({field: this.colValues[i], header: this.colValues[i]})
+                this.cols.push({field: this.colValues[i], header: this.toCamelCase(this.colValues[i])})
             }
          }
         },
@@ -154,7 +154,7 @@ public loading = false;
          this.colValues = Object.keys(this.tableData[0]);
          for(let i=0;i<this.colValues.length;i++){
           if(this.colValues[i]!=='portal_id' && this.colValues[i]!=='dealer_id' && this.colValues[i]!=='tran_id' && this.colValues[i]!=='srno') {
-            this.cols.push({field: this.colValues[i], header: this.colValues[i]});
+            this.cols.push({field: this.colValues[i], header: this.toCamelCase(this.colValues[i])});
           }        
          }
          this.header = heading;
@@ -218,5 +218,22 @@ public loading = false;
                    }
                  );
     }
+
+   toCamelCase = function(str) {
+    {
+      str= str[0].toUpperCase() + str.substring(1)
+      // Lower cases the string
+      return str
+        // Replaces any - or _ characters with a space 
+        .replace( /[-_]+/g, ' ')
+        // Removes any non alphanumeric characters 
+        .replace( /[^\w\s]/g, '')
+        // Uppercases the first character in each group immediately following a space 
+        // (delimited by spaces) 
+        .replace( / (.)/g, function($1) { return $1.toLowerCase(); })
+  
+    }
+         
+  }
 }
 
