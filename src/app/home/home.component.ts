@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
     private reportService: ReportService, 
     private jwtService: JwtService
   ) {
+    this.router.navigateByUrl('/login'); 
     this.currentUser = this.jwtService.getCurrentUser();
           var authData = {
           'userId':this.currentUser.userId,
