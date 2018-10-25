@@ -151,11 +151,13 @@ public loading = false;
             this.colValues = null;
             this.cols = [];
             this.tableData = data.data;
+            if(this.tableData.length) {
          this.colValues = Object.keys(this.tableData[0]);
          for(let i=0;i<this.colValues.length;i++){
           if(this.colValues[i]!=='portal_id' && this.colValues[i]!=='dealer_id' && this.colValues[i]!=='tran_id' && this.colValues[i]!=='srno') {
             this.cols.push({field: this.colValues[i], header: this.toCamelCase(this.colValues[i])});
-          }        
+          } 
+          }       
          }
          this.header = heading;
          
