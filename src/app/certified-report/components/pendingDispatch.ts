@@ -23,27 +23,23 @@ export class PendingDispatchComponent implements OnInit {
   private displayCancel= false;
   private paymentObj:any;
   public popUpData:any = {
-    'amount': null,
-	  'approval': null,
-	  'bank_ref_no': null,
-	  'card_no': null,
+    'courier': null,
+	  'docket_no': null,
+	  'delivery_date': null,	 
 	  'dealer_emp_id':null, 
 	  'new_identity': null,
   	'order_date': null,
 	  'order_no': null,
-	  'order_status': null,
-	  'payment_mode': null,
-	  'portal_id': null,
-	  'tracking_id': null,
+	  'dispatch_qty': null,
+	  'mode_of_transport': null,
+	  'portal_id': null,	
 	  'tran_id': null,
 	  'type': null,
 	  'user_id': null
   };
   public updateStatusObj:any = {}
 
-  private setApprove = {
-    status:true
-  };
+ 
   public StatusList:any = ['Approved'];
   public statusRejectList:any = ['Not Approved'];
   public selectedListType:any;
@@ -96,25 +92,23 @@ export class PendingDispatchComponent implements OnInit {
         "order_no":row.order_no, 
         "order_date":row.date
       }
-      
+      console.log(this.paymentObj);
       this.reportService.gatPendingDispatchedOrderPaymentDetail(environment.get_dispatchedorder_detail,this.paymentObj).subscribe(
         data => {
           this.popUpData =  {
-            'amount': data.amount,
-	          'approval': data.approval,
-	          'bank_ref_no': data.bank_ref_no,
-	          'card_no': data.card_no,
-	          'dealer_emp_id':data.dealer_emp_id, 
-	          'new_identity': data.new_identity,
-  	        'order_date': data.order_date,
-	          'order_no': data.order_no,
-	          'order_status': data.order_status,
-	          'payment_mode': data.payment_mode,
-	          'portal_id': data.portal_id,
-	          'tracking_id': data.tracking_id,
-	          'tran_id': data.tran_id,
-	          'type': data.type,
-	          'user_id': data.user_id
+            'courier': data.courier,
+            'docket_no': data.docket_no,
+            'delivery_date': data.delivery_date,	 
+            'dealer_emp_id':this.paymentObj.dealer_emp_id,
+            'new_identity': data.new_identity,
+            'order_date': this.paymentObj.order_date,
+            'order_no': this.paymentObj.order_no,
+            'dispatch_qty': data.dispatch_qty,
+            'mode_of_transport': data.mode_of_transport,
+            'portal_id': this.paymentObj.portal_id,
+            'tran_id': this.paymentObj.tran_id,
+            'type': this.paymentObj.type,
+            'user_id': data.user_id,
           };
           this.displayApprove=true;
           console.log(this.popUpData);
@@ -135,16 +129,14 @@ export class PendingDispatchComponent implements OnInit {
         "dealer_emp_id": this.paymentObj.dealer_emp_id,
         "order_no": this.paymentObj.order_no,
         "order_date": this.paymentObj.order_date,
-        "order_status": this.popUpData.order_status,
-        "approval": this.selectedListType,
-        "payment_mode": this.popUpData.payment_mode,
-        "bank_ref_no": this.popUpData.bank_ref_no,
-        "tracking_id": this.popUpData.tracking_id,
-        "card_no": this.popUpData.card_no,
-        "amount": this.popUpData.amount,
+        "dispatch_qty": this.popUpData.dispatch_qty,
+        "delivery_date": this.popUpData.delivery_date,
+        "docket_no": this.popUpData.docket_no,
+        "courier": this.popUpData.courier,
+        "mode_of_transport": this.popUpData.mode_of_transport,        
         "user_id": this.popUpData.user_id
       }
-      this.reportService.updatePendingOrderStatus(environment.update_order_status,this.updateStatusObj).subscribe(
+      this.reportService.updatePendingDispatchedOrderStatus(environment.update_dispatchedorder_status,this.updateStatusObj).subscribe(
         data => {
           console.log(data);
           this.getDefaultData();
@@ -157,6 +149,7 @@ export class PendingDispatchComponent implements OnInit {
     }
 
     getDefaultData(){
+      this.displayApprove = false;
       this.postObject = 
       { 
       Draw : "1", "Start" : "1", "Length" : "100",
